@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" content="initial-scale : 10">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="css/count_html.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table>
+      <tr>
+      </tr>
+      <tr>
+        <td rowspan="2" colspan="6"><p class="count_output" id="count_output">0</p></td>
+        <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p()">+</button></td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;"><button class="count_m" onclick="count_m()">-</button></td>
+      </tr>
+      <tr>
+        <td colspan="7"><button class="count_r" onclick="count_r()">초기화</button></td>
+      </tr>
+      <tr>
+        <td colspan="7"><button class="count_s" onclick="count_s()">기록</button></td>
+      </tr>
+    </table>
+    <div id="div_01" class="d_s" onclick="div_cl(1)">
+
+    </div>
+    <div id="div_02" class="d_s" onclick="div_cl(2)">
+      
+    </div>
+    <div id="div_03" class="d_s" onclick="div_cl(3)">
+      
+    </div>
+    <div id="div_04" class="d_s" onclick="div_cl(4)">
+      
+    </div>
+    <div id="div_05" class="d_s" onclick="div_cl(5)">
+      
+    </div>
+    <thead>
+      <tr>
+        <td colspan="7">
+          <a href="index.html"><button class="d_">돌아가기</button></a>
+        </td>
+      </tr>
+    </thead>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div>
+    <script src="js/count_html.js"></script>
+  </body>
+</html>

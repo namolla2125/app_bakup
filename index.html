@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <!-- meta-og: -->
+    <meta content="website" property="og:type">
+    <meta content="2023 각리초 4-3 웹사이트" property="og:title">
+    <meta content="민찬민찬 민찬민찬" property="og:description">
+    <meta content="https://namollatoolbox.netlify.app" property="og:url">
+    <meta content="./img/indexImg.png" property="">    
+    <!-- meta-og: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="css/index_html.css" rel="stylesheet" type="text/css">
+    <style>
+      @keyframes ani-party-gif-01 {
+        from {
+          /* font-size: small; */
+          transform: rotateX('1deg') rotateY('1deg') rotateZ('1deg') perspective(2800px);
+        }
+        to {
+          /* font-size: 110%; */
+          transform: rotateX('360deg') rotateY('360deg') rotateZ('360deg') perspective(800px);
+        }
+      }
+      .party-size-gif-01 {
+        animation-name: ani-party-gif-01;
+        animation-duration: 0.5s;
+        animation-direction: alternate; 
+        animation-iteration-count: infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td class="party-size-gif-01">🎉</td>
+          <td>선생님, 보고싶었어요!!!</td>
+          <td class="party-size-gif-01">🎉</td>
+        </tr>
+      </table>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="font-size: 20px;" colspan="4">by namolla | ver. 1.2.0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_count" onclick="is_checked('count')" checked></td>
+          <td><a href="count.html"><button id="desc_count" style="background-color: chocolate;"><p>카운트</p></button></a></td>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_count_x6" onclick="is_checked('count_x6')" checked></td>
+          <td><a href="mo_score_count.html"><button id="desc_count_x6" style="background-color: chartreuse;"><p>카운트 x6</p></button></a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_rotho" onclick="is_checked('rotho')" checked></td>
+          <td><a href="rotho.html"><button id="desc_rotho" style="background-color: magenta"><p>로또<br>추천</p></button></a></td>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_drawing" onclick="is_checked('drawing')" checked></td>
+          <td><a href="drawing.html"><button id="desc_drawing" style="background-color: mediumslateblue"><p>숫자<br>뽑기</p></button></a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_ja_drawing" onclick="is_checked('ja_drawing')" checked></td>
+          <td><a href="ja_drawing_index.html"><button id="desc_ja_drawing" style="background-color: darkgreen;">자리<br>뽑기</button></a></td>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_panser" onclick="is_checked('panser')" checked></td>
+          <td><a href="panser.html"><button id="desc_panser" style="background-color: lightblue;">알림장<br>쓰기</button></a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_clock" onclick="is_checked('clock')" checked></td>
+          <td><button id="desc_clock" style="background-color:gold;" onclick="window.open('./time.html','', 'toolbar=no,scrollbars=no,resizable=no,status=no,menubar=no,location=no,width=352, height=142, top=0,left=0');">시계</button></td>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_click_game" onclick="is_checked('click_game')" checked></td>
+          <td><a href="click.html"><button id="desc_click_game" style="background-color: lightsalmon;">클릭<br>게임</button></a></td>
+        </tr>
+        
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_paint_board" onclick="is_checked('paint_board')" checked></td>
+          <td><a href="paint_board.html"><button id="desc_paint_board" style="background-color: lightgreen;">그림판</button></a></td>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_msg" onclick="is_checked('msg')" checked></td>
+          <td><a href="popup.html"><button id="desc_msg" style="background-color: lightgoldenrodyellow;">편지<br>보기</button></a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button onclick="window.open('update_bug_fix.html')" style="background-color: gray;">업데이트<br>확인</button>
+            <!-- <h5 style="background-color: gray; text-align: center;">업데이트<br>확인</h5> -->
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div>
+    <script src="js/index_html.js"></script>
+  </body>
+</html>

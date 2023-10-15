@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous">
+    </script>
+    <title></title>
+
+    <style>
+      .div_color_1 {
+        animation-name: color-1;
+        animation-duration: 60s;
+        animation-timing-function: linear;
+        /* animation-direction: alternate; */
+        animation-iteration-count: infinite;
+      }
+
+      .div_color_2 {
+        animation-name: color-2;
+        animation-duration: 60s;
+
+
+        /* animation-direction: alternate; */
+        /* animation-iteration-count: infinite; */
+      }
+      td {
+        width: 50px;
+        height: 50px;
+
+        border: 1px black;
+
+        transition: 200ms ease-in;
+
+        background-color: aqua;
+      }
+      table {
+        text-align: center;
+      }
+      .onevent {
+        transform: scale(1.5);
+        background-color: blueviolet;
+      }
+
+      @keyframes color-1 {
+        from {
+          background-color: red;
+        }
+        16.66% {
+          background-color: orange;
+        }
+        33.33% {
+          background: yellow;
+        }
+        50.00% {
+          background-color: green;
+        }
+        66.66% {
+          background-color: blue;
+        }
+        83.33% {
+          background-color: purple;
+        }
+        to {
+          background-color: red;
+        }
+      }
+
+      @keyframes color-2 {
+        from {
+          background-color: red;
+        }
+        14.2% {
+          background-color: purple;
+        }
+        28.4% {
+          
+          background-color: blue;
+        }
+        42.6% {
+          background-color: green;
+        }
+        56.8% {
+          background: yellow;
+        }
+        71% {
+          background-color: orange;
+        }
+        to {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body style="text-align: center;">
+    <!-- <div style="width: 100vw; height: 100vh; text-align: center;" class="div_color_1"> -->
+      <!-- <div style="width: 90vw; height: 90vh; " class="div_color_2">
+        <div style="width: 80vw; height: 80vh; " class="div_color_1">
+          <div style="width: 70vw; height: 70vh; " class="div_color_2">
+            <div style="width: 60vw; height: 60vh; " class="div_color_1">
+              <div style="width: 50vw; height: 50vh; " class="div_color_2">
+                <div style="width: 40vw; height: 40vh; " class="div_color_1">
+                  <div style="width: 30vw; height: 30vh; " class="div_color_2">
+                    <div style="width: 20vw; height: 20vh; " class="div_color_1">
+                      <div style="width: 10vw; height: 10vh;" class="div_color_2">
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <table>
+        <tr>
+          <td id="key-esc">ESC</td>
+          <td></td>
+          <td id="key-f1">F1</td>
+          <td id="key-f2">F2</td>
+          <td id="key-f3">F3</td>
+          <td id="key-f4">F4</td>
+          <td></td>
+          <td id="key-f5">F5</td>
+          <td id="key-f6">F6</td>
+          <td id="key-f7">F7</td>
+          <td id="key-f8">F8</td>
+          <td></td>
+          <td id="key-f9">F9</td>
+          <td id="key-f10">F10</td>
+          <td id="key-f11">F11</td>
+          <td id="key-f12">F12</td>
+        </tr>
+        <tr>
+          <td id="key-tilde">` ~</td>
+          <td id="key-1">1 !</td>
+          <td id="key-2">2 @</td>
+          <td id="key-3">3 #</td>
+          <td id="key-4">4 $</td>
+          <td id="key-5">5 %</td>
+          <td id="key-6">6 ^</td>
+          <td id="key-7">7 &</td>
+          <td id="key-8">8 *</td>
+          <td id="key-9">9 (</td>
+          <td id="key-0">0 )</td>
+          <td id="key-minus">- _</td>
+          <td id="key-plus">= +</td>
+          <td colspan="2" id="key-backSpace">back<br>space</td>
+        </tr>
+        <tr>
+          <td colspan="2" id="key-tab">tab</td>
+          <td id="key-q">Q ㅃ<br>ㅂ</td>
+          <td id="key-w">W ㅉ<br>ㅈ</td>
+          <td id="key-r">R ㄲ<br>ㄱ</td>
+          <td id="key-t">T ㅆ<br>ㅅ</td>
+          <td id="key-y">Y ㅛ</td>
+          <td id="key-u">U ㅕ</td>
+          <td id="key-i">I ㅑ</td>
+          <td id="key-o">O ㅒ<br>ㅐ</td>
+          <td id="key-p">P ㅖ<br>ㅔ</td>
+          <td id="key-braceOpen">[ {</td>
+          <td id="key-braceClose">} ]</td>
+          <td colspan="2" id="key-backSlash">＼<br>| ￦</td>
+        </tr>
+        <tr>
+          <td colspan="2" id="key-capsLock">caps lock</td>
+          <td id="key-a">A ㅁ</td>
+          <td id="key-s">S ㄴ</td>
+          <td id="key-d">D ㅇ</td>
+          <td id="key-f">F ㄹ</td>
+          <td id="key-g">G ㅎ</td>
+          <td id="key-h">H ㅗ</td>
+          <td id="key-j">J ㅓ</td>
+          <td id="key-k">K ㅏ</td>
+          <td id="key-l">L ㅣ</td>
+          <td id="key-colon">; :</td>
+          <td id="key-quote">' "</td>
+          <td colspan="2" id="key-enter">enter</td>
+        </tr>
+        <tr>
+          <td colspan="2" id="key-l_Shift">shift</td>
+          <td id="key-z">Z ㅋ</td>
+          <td id="key-x">X ㅌ</td>
+          <td id="key-c">C ㅊ</td>
+          <td id="key-v">V ㅍ</td>
+          <td id="key-b">B ㅠ</td>
+          <td id="key-n">N ㅜ</td>
+          <td id="key-m">M ㅡ</td>
+          <td id="key-rest">, &#60;</td>
+          <td id="key-fullStop">. &#62;</td>
+          <td id="key-Slash">/ ?</td>
+          <td colspan="3" id="key-r_shift">shift</td>
+        </tr>
+        <tr>
+          <td id="key-l_ctrl">ctrl</td>
+          <td id="key-window">윈도우</td>
+          <td id="key-l_alt">alt</td>
+          <td colspan="9" id="key-space">space</td>
+          <td id="key-r_alt">alt<br>한영</td>
+          <td id="key-fn">fn</td>
+          <td id="key-r_ctrl">ctrl</td>
+        </tr>
+      </table>
+    <!-- </div> -->
+
+
+    <script>
+      // var fun = {
+      //   KeyW: function (element, px){
+      //     document.querySelector(element).style.transform = "translateY("+px+"px)"
+      //   }
+      
+      // }
+      window.onload = {
+
+      }
+      function KeyDown(id, code){
+        window.addEventListener("keydown", (e) => {
+          if(e.code === code){
+            document.getElementById("key-"+id).classList.add("onevent");
+          }
+        });
+      }
+      function KeyUp(id){
+        window.addEventListener("keyup", (e) => {
+          document.getElementById("key-"+id).classList.remove("onevent");
+        });
+      }
+      KeyDown("esc", "Escape");
+      KeyUp("esc");
+    </script>
+  </body>
+</html>

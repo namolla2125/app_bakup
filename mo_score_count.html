@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"  content="initial-scale : 10">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="css/mo_score_count_html.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table style="width: 100vh; height: 100vh;">
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <!-- <td colspan="7">1(모둠)팀</td> -->
+              <td colspan="7"><input type="text" style="width: 460px; height: 60px; border-radius: 5px; font-size: 50px;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2" colspan="6"><p class="count_output" id="count_output_01">0</p></td>
+              <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p_01()">+</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><button class="count_m" onclick="count_m_01()">-</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;" colspan="7"><button class="count_r" onclick="count_r_01()">초기화</button></td>
+            </tr>
+            <tr>
+              <td><br><br><br><br></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <!-- <td colspan="7">2(모둠)팀</td> -->
+              <td colspan="7"><input type="text" style="width: 460px; height: 60px; border-radius: 5px; font-size: 50px;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2" colspan="6"><p class="count_output" id="count_output_02">0</p></td>
+              <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p_02()">+</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><button class="count_m" onclick="count_m_02()">-</button></td>
+            </tr>
+            <tr>
+              <td colspan="7"><button class="count_r" onclick="count_r_02()">초기화</button></td>
+            </tr>
+            <tr>
+              <td><br><br><br><br></td>
+            </tr>
+          </table>
+          <script>
+            
+          </script>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <!-- <td colspan="7">3(모둠)팀</td> -->
+              <td colspan="7"><input type="text" style="width: 460px; height: 60px; border-radius: 5px; font-size: 50px;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2" colspan="6"><p class="count_output" id="count_output_03">0</p></td>
+              <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p_03()">+</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><button class="count_m" onclick="count_m_03()">-</button></td>
+            </tr>
+            <tr>
+              <td colspan="7"><button class="count_r" onclick="count_r_03()">초기화</button></td>
+            </tr>
+            <tr>
+              <td><br><br><br><br></td>
+            </tr>
+          </table>
+          <script>
+
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <!-- <td colspan="7">4(모둠)팀</td> -->
+              <td colspan="7"><input type="text" style="width: 460px; height: 60px; border-radius: 5px; font-size: 50px;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2" colspan="6"><p class="count_output" id="count_output_04">0</p></td>
+              <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p_04()">+</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><button class="count_m" onclick="count_m_04()">-</button></td>
+            </tr>
+            <tr>
+              <td colspan="7"><button class="count_r" onclick="count_r_04()">초기화</button></td>
+            </tr>
+          </table>
+          <script>
+
+          </script>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <!-- <td colspan="7">5(모둠)팀</td> -->
+              <td colspan="7"><input type="text" style="width: 460px; height: 60px; border-radius: 5px; font-size: 50px;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2" colspan="6"><p class="count_output" id="count_output_05">0</p></td>
+              <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p_05()">+</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><button class="count_m" onclick="count_m_05()">-</button></td>
+            </tr>
+            <tr>
+              <td colspan="7"><button class="count_r" onclick="count_r_05()">초기화</button></td>
+            </tr>
+          </table>
+          <script>
+
+          </script>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <!-- <td colspan="7">6(모둠)팀</td> -->
+              <td colspan="7"><input type="text" style="width: 460px; height: 60px; border-radius: 5px; font-size: 50px;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2" colspan="6"><p class="count_output" id="count_output_06">0</p></td>
+              <td style="vertical-align: bottom;"><button class="count_p" onclick="count_p_06()">+</button></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><button class="count_m" onclick="count_m_06()">-</button></td>
+            </tr>
+            <tr>
+              <td colspan="7"><button class="count_r" onclick="count_r_06()">초기화</button></td>
+            </tr>
+          </table>
+          <script>
+
+          </script>
+        </td>
+      </tr>
+      <thead>
+        <tr>
+          <td colspan="1" rowspan="1" class="d_">
+            <a href="index.html"><button class="d_">돌아가기</button></a>
+          </td>
+          <td colspan="1" class="all">
+            <input type="text" id="count_all" class="all" style="font-size: 50px;" onkeyup="count_all()">
+          </td>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div>
+    <script src="js/mo_score_count_html.js"></script>
+  </body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      table,tr,td,th {
+        border : 3px solid black; 
+      }
+      td,th {
+        width: 13.85vw;
+      }
+      table {
+        width: 97vw;
+        height: 100vh;
+      }
+      /*
+      table {
+        width: 100%;
+        height: 100vh;
+
+        transition: all ease 1s;
+      }
+
+      /* .body_font_01 {
+        font-family: 'Sunflower', sans-serif;
+      } *
+
+      body {
+        font-family: 'Hi Melody', cursive;
+        text-align: center;
+        font-weight: bold;
+        font-size: 70px;
+
+      }
+      html  {
+        width: 100%;
+        height: 100%;
+      } */
+    </style>
+  </head>
+  <body>
+<!-- 
+   <p><input type="range" min="1" max="10" value="6" id="y" onchange="y_o()"><div id="y_o">6열</div></p>
+    <hr>
+    <p><input type="range" min="1" max="10" value="4" id="h" onchange="h_o()"><div id="h_o">4행</div></p>
+
+    <input type="submit" value="제출" onclick="je()">
+
+    <table>
+      <tr>
+        <td colspan="2" style="background-color: rgb(252, 206, 121); border : 5px solid black;">선생님</td>
+        <td colspan="4" style="background-color: darkgreen; border : 5px solid rgb(86, 62, 20);">칠판</td>
+      </tr>
+      <tr>
+        <td id="_1_"></td>
+        <td id="1_"></td>
+        <td id="_2_"></td>
+        <td id="2_"></td>
+        <td id="_3_"></td>
+        <td id="3_"></td>
+      </tr>
+      <tr>
+        <td id="4_"></td>
+        <td id="_4_"></td>
+        <td id="5_"></td>
+        <td id="_5_"></td>
+        <td id="6_"></td>
+        <td id="_6_"></td>
+      </tr>
+      <tr>
+        <td id="_7_"></td>
+        <td id="7_"></td>
+        <td id="_8_"></td>
+        <td id="8_"></td>
+        <td id="_9_"></td>
+        <td id="9_"></td>
+      </tr>
+      <tr>
+        <td id="10_"></td>
+        <td id="_10_"></td>
+        <td id="11_"></td>
+        <td id="_11_"></td>
+        <td id="12_"></td>
+        <td><img src="img/ja_drawingg/pengdoli.png"></td>
+      </tr>
+    </table>
+    <a href="img/ja_drawingg/pengdoli.png" download><button>팽돌이 사진 다운로드</button></a>
+
+
+    <script>
+      var name_list_n = [
+        "김민찬", "김연우", "김준이",
+        "박주현", "박재희",
+        "오연성", "유한주", "유환준", "이지혁",
+        "장의찬", "최해율"
+      ] 
+
+      var name_list_y = [
+        "고도영", "김예나", "김지현",
+        "박소민", "배채아", "신예담",
+        "윤서인", "임예원", 
+        "장별이", "정지인", "최서안", "최수진"
+      ] 
+      window.onload = function(){
+          onlode();
+      }
+      
+      function onlode(){
+        // console.log("a")
+        var na = "";
+        var bb = [];
+        for(var i = 1; name_list_n.length > 0; i++){
+          na = Math.floor(Math.random() * 11 + 1);
+          console.log(i);
+          if( document.getElementById("_"+na+"_").innerHTML === ''){
+            document.getElementById("_"+na+"_").textContent = name_list_n[0];
+            // delete name_list[0];
+            bb = name_list_n.shift();
+          }
+        }
+
+        for(var i = 1; name_list_y.length > 0; i++){
+          na = Math.floor(Math.random() * 12 + 1);
+          console.log(i);
+          if( document.getElementById(na+"_").innerHTML === ''){
+            document.getElementById(na+"_").textContent = name_list_y[0];
+            // delete name_list[0];
+            bb = name_list_y.shift();
+          }
+        }
+
+        document.querySelector("table").style.transform = "rotate(1turn)";
+      }
+    </script>
+   <script>
+
+
+      var y = 0;
+      var h = 0;
+
+      function je(){
+        y = document.querySelector("#y").value;
+        h = document.querySelector("#h").value;
+
+
+        console.log(y+"열, "+h+"행");
+      }
+      function y_o(){
+        y = document.querySelector("#y").value;
+        document.querySelector("#y_o").textContent = y+"열";
+
+      }
+      function h_o(){
+        h = document.querySelector("#h").value;
+        document.querySelector("#h_o").textContent = h+"행";
+
+      }
+    </script> 
+
+
+
+    <button draggable="true">🦊</button>
+
+    <div id="myDiv" style="cursor: crosshair; width: 200px; height: 20px; border-width:1px; border-style:solid; border-color:red;">
+    
+      
+    </div>
+
+    <script>
+      // addEventListener("dragend", (e) => {
+      //   console.log(e);
+  
+      // });
+
+      
+
+      
+
+      
+      // addEventListener("mousemove",function(event){
+      //       console.log(event.x)
+      //       console.log(event.y)
+      //       let x = event.screenX;
+      //       let y = event.screenY;
+      //       /*
+      //           이벤트가 일어난 좌표를
+      //           "x 좌표:100 y좌표:200" 형식의 문자열로 만들어서
+      //           위의 div의 innerText로 출력해보세요
+      //       */
+      //      document.querySelector("#myDiv").innerText = "x 좌표:"+x+"y 좌표:"+y;
+      // });
+
+      // const rect = document.querySelector('body').getBoundingClientRect();
+      // console.log(rect);
+    </script>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div> -->
+    <p id="drop"></p>
+    <div id="setting-01">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th id="drag" draggable="true">남자</th>
+            <th id="drag" draggable="true">랜덤</th>
+            <th id="drag" draggable="true">여자</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="addTempate">
+          <tr>
+            <!-- <td id="drop"></td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <template id="tr-1">
+      <tr>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <template id="tr-2">
+      <tr>
+        <td id="drop"></td>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <template id="tr-3">
+      <tr>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <template id="tr-4">
+      <tr>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <template id="tr-5">
+      <tr>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <template id="tr-6">
+      <tr>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <template id="tr-7">
+      <tr>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+        <td id="drop"></td>
+      </tr>
+    </template>
+    <script>
+      function addTempate(n) {
+        // 템플릿 요소 가져오기
+        const template = document.querySelector('#tr-'+n);
+        
+        // 템플릿을 추가할 요소 가져오기
+        const tbl = document.querySelector('#addTempate');
+        
+        // 템플릿의 content 속성과 그의 자식 모든 요소를 복사
+        const clone = template.content.cloneNode(true); 
+        
+        // 기존 요소에 복사한 템플릿을 추가
+        tbl.appendChild(clone);
+      }
+      window.onload = function (){
+        var promptH = prompt("행을 입력하세요\n최대 7까지 가능");
+        var promptY = prompt("열을 입력하세요\n최대 7까지 가능");
+        console.log("aa")
+        for(var i = 1; i < 7; i++){
+          console.log("bb")
+          //td = 열; tr = 행
+          //addTempate(); 7하면 tr1, td7;
+          if(i == promptH){
+            console.log("cc")
+            break;
+          }else{
+            addTempate(promptY);
+            console.log("dd")
+          }
+        }
+        console.log("ee")
+      }
+      // document.getElementById('drag').ondragstart = function(e) {
+      //   e.dataTransfer.setData('data', this.innerHTML); // 드래그해보세요 문자열 전달
+      //   console.log("드래그 시작됨")
+      // };
+      // document.getElementById('drop').ondragover = function(e) {
+      //   e.preventDefault(); // 필수 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
+      //   console.log("어쩌구 저쩌구")
+      // };
+      // document.getElementById('drop').ondrop = function(e) {
+      //   // document.querySelector("#drop").innerHTML = e.dataTransfer.getData('data'); // 데이터를 가져옵니다.
+      //   alert(e.dataTransfer.getData('data'))
+      //   console.log("드롭됨")
+      // };
+
+
+      document.getElementById('drag').ondragstart = function(e) {
+        console.log('드래그 시작');
+        e.dataTransfer.setData('data', this.innerHTML);
+        e.dataTransfer.dropEffect = 'copy';
+      };
+      var drop = document.getElementById('drop');
+      drop.ondragover = function(e) {
+        e.preventDefault(); // 필수
+        console.log('무언가 위에 올려져 있습니다');
+        e.dataTransfer.dropEffect = 'move';
+      };
+      drop.ondrop = function(e) {
+        console.log('무언가 드롭되었습니다.');
+        alert(e.dataTransfer.getData('data'));
+        this.innerHTML = e.dataTransfer.getData('data');
+      }
+    </script>
+  </body>
+</html>

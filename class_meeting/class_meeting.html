@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>학급회의 기록</title>
+    <style>
+      body {
+        display: flex;
+      }
+      #main {
+        margin: auto;
+        width: 500px;
+        height: 350px;
+
+        background-color: #fefeaa;
+        display: flex;
+      }
+      #main label {
+        margin: auto;
+      }
+      #read, #create {
+        border: none;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <label>
+        <button id="read" onclick="window.open('./read.html')">데이터 조회하기</button>
+        <button id="create" onclick="window.open('./create.html')">데이터 추가하기</button>
+      </label>
+    </div>
+    <script>
+     
+    </script>
+  </body>
+</html>

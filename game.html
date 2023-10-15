@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body style="width: 100vw; height: 100vh;">
+    <canvas id="myCanvas">
+
+    </canvas>
+    <script>
+      window.onkeydown = (e) => {
+        if(e.key === "ArrowRight"){
+
+        }
+        if(e.key === "ArrowLift"){
+          
+        }
+      };
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+      var drowXY = {
+        // endX: startX,
+        // endY: 0,
+        x: 0,
+        y: 0
+        
+      }
+      ctx.fillStyle = "yellow";
+     
+      function drow (){
+        ctx.fillRect(drowXY.x, drowXY.y, drowXY.x+50, drowXY.y+50);
+      }
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" content="initial-scale : 10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      td,th {
+        width: 80px;
+        height: 80px;
+
+        text-align: center;
+      }
+      .td {
+        width: 80px;
+        height: 80px;
+      }
+      button {
+        width: 80px;
+        height: 80px;
+
+        font-family: 'Hi Melody', cursive;
+        text-align: center;
+
+        font-size: 20px;
+        font-weight: bold;
+
+        border-radius: 5px;
+        border: none;
+
+        cursor: pointer;
+
+        transition: all ease 1s;
+      }
+
+      button:hover {
+        transform: scale(1.7, 1.7) rotate(1turn);
+      }
+
+      body {
+        font-family: 'Hi Melody', cursive;
+        text-align: center;
+
+        background-color: #F2AE1D;
+
+        width: 100%;
+
+      }
+
+      a {
+        text-decoration-line: none;
+      }
+    </style>
+    <!-- <script src="js/localStorage.js"></script>
+    <script>
+      window.localStorage.setItem(
+        "update_ver",
+        "1.0.0"
+      );
+
+      const up_date_ver = window.localStorage.getItem("update");
+      function up_date_log_output(){
+        if( up_date_ver == "1.0.1" ){
+          return;
+        }
+        if( up_date_ver == "1.0.0" ){
+          window.localStorage.setItem(
+            "update_ver",
+            "1.0.1"
+          );
+          window.open("update_bug_fix.html")
+        }
+      }
+      window.onload = function (){
+        up_date_log_output()
+      }
+      // window.localStorage.setItem(
+      //   "update_ver",
+        
+      // );
+    </script> -->
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_ja_drawing_n_y" onclick="is_checked_ja_drawing_n_y()" checked></td>
+          <td><a href="ja_drawing_n_y.html"><button id="desc_ja_drawing_n_y" style="background-color: darkgreen;">자리<br>뽑기<br>패턴</button></a></td>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_ja_drawing_random" onclick="is_checked_ja_drawing_random()" checked></td>
+          <td><a href="ja_drawing_random.html"><button id="desc_ja_drawing_random" style="background-color: darkgreen;">자리<br>뽑기<br>랜덤</button></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function showDetail_ja_drawing_n_y() {
+        document.querySelector("#desc_ja_drawing_n_y").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_ja_drawing_n_y() {
+        document.querySelector("#desc_ja_drawing_n_y").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_ja_drawing_n_y() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_ja_drawing_n_y = document.getElementById('checkbox_ja_drawing_n_y');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_ja_drawing_n_y = checkbox_ja_drawing_n_y.checked; //true == 채크 /false == 채크 안됌
+        
+        if( is_checked_ja_drawing_n_y == true ){
+          showDetail_ja_drawing_n_y();
+        }
+        if( is_checked_ja_drawing_n_y == false ){
+          hideDetail_ja_drawing_n_y();
+        }
+      
+      }
+
+
+      function showDetail_ja_drawing_random() {
+        document.querySelector("#desc_ja_drawing_random").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_ja_drawing_random() {
+        document.querySelector("#desc_ja_drawing_random").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_ja_drawing_random() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_ja_drawing_random = document.getElementById('checkbox_ja_drawing_random');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_ja_drawing_random = checkbox_ja_drawing_random.checked; //true == 채크 /false == 채크 안됌
+        
+        if( is_checked_ja_drawing_random == true ){
+          showDetail_ja_drawing_random();
+        }
+        if( is_checked_ja_drawing_random == false ){
+          hideDetail_ja_drawing_random();
+        }
+      
+      }
+    </script>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div>
+    <!-- <p style="font-size: 1px;">유튜브 나몰라 tv  <a href="https://www.youtube.com/@namolla2125">https://www.youtube.com/@namolla2125</a></p> -->
+  </body>
+</html>

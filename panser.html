@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title></title>
+
+    <style>
+      textarea {
+        width: 100vw;
+        height: 95vh;
+        resize: none;
+
+        font-family: 'Nanum Gothic', sans-serif;
+
+        font-size: 70px;
+
+        background-color: midnightblue;
+
+        color: white;
+      }
+      .textarea_bold {
+        font-weight: bold;
+      }
+      .div_color_1 {
+        animation-name: color-1;
+        animation-duration: 40s;
+        /* animation-direction: alternate; */
+        animation-iteration-count: infinite;
+
+        animation-timing-function: linear;
+      }
+
+      body {
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: bold;
+      }
+
+      button {
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: bold;
+      }
+
+      input {
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: bold;
+
+        border: none;
+
+        border-radius: 5px;
+      }
+
+      @keyframes color-1 {
+        from {
+          background-color: red;
+        }
+        16.66% {
+          background-color: orange;
+        }
+        33.33% {
+          background: yellow;
+        }
+        50.00% {
+          background-color: green;
+        }
+        66.66% {
+          background-color: blue;
+        }
+        83.33% {
+          background-color: purple;
+        }
+        to {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <label><input type="text" id="text-px" value="70" onkeyup="textarea_text_px()">px</label>
+        <label><button onclick="bg_color.colorful()" class="div_color_1" style="border: none; border-radius: 5px;">무지개 배경</button>
+          <button onclick="ifBgColorButton()" style="background-color: lightblue; border: none; border-radius: 5px;" id="bgcolorsettingbutton">어두운 파란 배경(기본값)</button>
+          <button onclick="ifTextColorButton()" style="background-color: lightblue; border: none; border-radius: 5px;" id="textcolorsettingbutton">흰 색 글씨</button>
+          <button id="fontBoldButton" onclick="ifFontBoldButton()" style="border: none; border-radius: 5px;">bold</button></label>
+          <button id="BaRoGagi-01">수학익힘 숙제</button>
+          <button id="BaRoGagi-02">복도 뛰기 X</button>
+      </thead>
+      <tbody>
+        <textarea id="text" placeholder="내용을 여기에 입력하세요."></textarea>
+      </tbody>
+    </table>
+
+    <script>
+
+      window.onload = function (){
+        var now = new Date();
+        
+        const month = now.getMonth()+1;
+        const date = now.getDate();
+        const week = ['일', '월', '화', '수', '목', '금', '토'];
+        const day = week[new Date().getDay()];
+        var text = document.createTextNode("\u00a0");
+        document.getElementById("text").textContent = month+"월 "+date+"일 ("+day+")\n\n1. ";
+
+        fontWeight.yesFontBold();
+        document.querySelector("#fontBoldButton").style.backgroundColor = "#A6A6A6";
+      }
+      function textarea_text_px(){
+        document.querySelector("textarea").style.fontSize = document.getElementById("text-px").value+"px";
+      }
+
+      BaRoGagi("BaRoGagi-01", "n. 수학 익힘 nn ~ nn쪽 숙제");
+      BaRoGagi("BaRoGagi-02", "n. 복도에서 뛰지 않기")
+
+
+      var bg_color = {
+        colorful: function(){
+          document.getElementById("text").classList.add("div_color_1");
+        },
+        colorblue: function(){
+          document.getElementById("text").classList.remove("div_color_1");
+        }
+      }
+
+      var fontWeight = {
+        yesFontBold: function(){
+          document.getElementById("text").classList.add("textarea_bold");
+        },
+        noFontBold: function(){
+          document.getElementById("text").classList.remove("textarea_bold");
+        }
+      }
+      var ifFontWeight = 1;
+      function ifFontBoldButton (){
+        if(ifFontWeight == 1){
+          fontWeight.yesFontBold();
+          document.querySelector("#fontBoldButton").style.backgroundColor = "#A6A6A6";
+          ifFontWeight = 0;
+          return;
+        }
+        if(ifFontWeight == 0){
+          fontWeight.noFontBold();
+          document.querySelector("#fontBoldButton").style.backgroundColor = "#D5D5D5";
+          ifFontWeight = 1;
+          return;
+        }
+      }
+      
+      function BaRoGagi(id, text){
+        var text_box = document.getElementById("text");
+        var button = document.getElementById(id);
+        var value = text;
+
+        button.onclick = function(){
+          text_box.value = `${text_box.value}\n${value}` 
+        }
+      }
+
+      var ifBgColor = 0;
+      var iftextColor = 0;
+      function textarea_bg_color(color, value, hS, bS){
+        if(ifBgColor == hS){
+
+          document.querySelector("#text").style.backgroundColor = color;
+          document.getElementById("bgcolorsettingbutton").textContent = value;
+          ifBgColor = bS;
+          document.getElementById("text").classList.remove("div_color_1");
+          return;
+        }
+        return;
+      }
+      function ifBgColorButton (){
+        if(ifBgColor == 0){
+          textarea_bg_color("darkred", "어두운 빨간 배경", 0, 1);
+        }
+        else if(ifBgColor == 1){
+          textarea_bg_color("darkorange", "어두운 주황 배경", 1, 2);
+        } 
+        else if(ifBgColor == 2){
+          textarea_bg_color("goldenrod", "어두운 노란 배경", 2, 3);
+        } 
+        else if(ifBgColor == 3){
+          textarea_bg_color("darkgreen", "어두운 초록 배경", 3, 4);
+        }
+        else if(ifBgColor == 4){
+          textarea_bg_color("midnightblue", "어두운 파란 배경(기본값)", 4, 5);
+        } 
+        else if(ifBgColor == 5){
+          textarea_bg_color("darkorchid", "어두운 보라 배경", 5, 6);
+        }
+        else if(ifBgColor == 6){
+          textarea_bg_color("red", "빨간 배경", 6, 7);
+        }  
+        else if(ifBgColor == 7){
+          textarea_bg_color("orange", "주황 배경", 7, 8);
+        } 
+        else if(ifBgColor == 8){
+          textarea_bg_color("yellow", "노란 배경", 8, 9);
+        } 
+        else if(ifBgColor == 9){
+          textarea_bg_color("green", "초록 배경", 9, 10);
+        } 
+        else if(ifBgColor == 10){
+          textarea_bg_color("blue", "파란 배경", 10, 11);
+        } 
+        else if(ifBgColor == 11){
+          textarea_bg_color("purple", "보라 배경", 11, 12);
+        } 
+        else if(ifBgColor == 12){
+          textarea_bg_color("#FFA7A7", "연한 빨강 배경", 12, 13);
+        } 
+        else if(ifBgColor == 13){
+          textarea_bg_color("#FFC19E", "연한 주황 배경", 13, 14);
+        } 
+        else if(ifBgColor == 14){
+          textarea_bg_color("#FFE08C", "연한 노랑 배경", 14, 15);
+        } 
+        else if(ifBgColor == 15){
+          textarea_bg_color("#B7F0B1", "연한 초록 배경", 15, 16);
+        } 
+        else if(ifBgColor == 16){
+          textarea_bg_color("#B2CCFF", "연한 파랑 배경", 16, 17);
+        } 
+        else if(ifBgColor == 17){
+          textarea_bg_color("#D1B2FF", "연한 보라 배경", 17, 18);
+        } 
+        else if(ifBgColor == 18){
+          textarea_bg_color("#000000", "검정 배경", 18, 19);
+        } 
+        else if(ifBgColor == 19){
+          textarea_bg_color("#FFFFFF", "하얀 배경", 19, 0);
+        } 
+      }
+      function textarea_text_color(color, value, hS, bS){
+        if(iftextColor == hS){
+          document.querySelector("#text").style.color = color;
+          document.getElementById("textcolorsettingbutton").textContent = value;
+          iftextColor = bS;
+          return;
+        }
+        return;
+      }
+      function ifTextColorButton (){
+        if(iftextColor == 0){
+          textarea_text_color("darkred", "어두운 빨간 색 글씨", 0, 1);
+        }
+        else if(iftextColor == 1){
+          textarea_text_color("darkorange", "어두운 주황 색 글씨", 1, 2);
+        } 
+        else if(iftextColor == 2){
+          textarea_text_color("goldenrod", "어두운 노란 색 글씨", 2, 3);
+        } 
+        else if(iftextColor == 3){
+          textarea_text_color("darkgreen", "어두운 초록 색 글씨", 3, 4);
+        }
+        else if(iftextColor == 4){
+          textarea_text_color("midnightblue", "어두운 파란 색 글씨", 4, 5);
+        } 
+        else if(iftextColor == 5){
+          textarea_text_color("darkorchid", "어두운 보라 색 글씨", 5, 6);
+        }
+        else if(iftextColor == 6){
+          textarea_text_color("red", "빨간 색 글씨", 6, 7);
+        }  
+        else if(iftextColor == 7){
+          textarea_text_color("orange", "주황 색 글씨", 7, 8);
+        } 
+        else if(iftextColor == 8){
+          textarea_text_color("yellow", "노란 색 글씨", 8, 9);
+        } 
+        else if(iftextColor == 9){
+          textarea_text_color("green", "초록 색 글씨", 9, 10);
+        } 
+        else if(iftextColor == 10){
+          textarea_text_color("blue", "파란 색 글씨", 10, 11);
+        } 
+        else if(iftextColor == 11){
+          textarea_text_color("purple", "보라 색 글씨", 11, 12);
+        } 
+        else if(iftextColor == 12){
+          textarea_text_color("#FFA7A7", "연한 빨강 색 글씨", 12, 13);
+        } 
+        else if(iftextColor == 13){
+          textarea_text_color("#FFC19E", "연한 주황 색 글씨", 13, 14);
+        } 
+        else if(iftextColor == 14){
+          textarea_text_color("#FFE08C", "연한 노랑 색 글씨", 14, 15);
+        } 
+        else if(iftextColor == 15){
+          textarea_text_color("#B7F0B1", "연한 초록 색 글씨", 15, 16);
+        } 
+        else if(iftextColor == 16){
+          textarea_text_color("#B2CCFF", "연한 파랑 색 글씨", 16, 17);
+        } 
+        else if(iftextColor == 17){
+          textarea_text_color("#D1B2FF", "연한 보라 색 글씨", 17, 18);
+        } 
+        else if(iftextColor == 18){
+          textarea_text_color("#000000", "검정 색 글씨", 18, 19);
+        } 
+        else if(iftextColor == 19){
+          textarea_text_color("#FFFFFF", "하얀 색 글씨(기본값)", 19, 0);
+        } 
+      }
+    </script>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div>
+  </body>
+</html>

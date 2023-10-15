@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" content="initial-scale : 10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <style>
+      td,th {
+        width: 80px;
+        height: 80px;
+
+        text-align: center;
+      }
+      .td {
+        width: 80px;
+        height: 80px;
+      }
+      button {
+        width: 80px;
+        height: 80px;
+
+        font-family: 'Hi Melody', cursive;
+        text-align: center;
+
+        font-size: 20px;
+        font-weight: bold;
+
+        border-radius: 5px;
+        border: none;
+
+        cursor: pointer;
+
+        transition: all ease 1s;
+      }
+
+      body {
+        font-family: 'Hi Melody', cursive;
+        text-align: center;
+
+        background-color: #F2AE1D;
+
+        width: 100%;
+
+      }
+
+      a {
+        text-decoration-line: none;
+      }
+
+      button:hover {
+        transform: scale(1.7, 1.7) rotate(1turn);
+      }
+
+
+      div:hover {
+        opacity: 1.0;
+
+        transform: scale(1.09, 1.09);
+
+        /* animation-name: scale_;
+        animation-duration: 0.5;
+        */
+      }
+      /*
+      @keyframes scale_ {
+        from {
+          opacity: 0.8;
+          transform: scale(1.0, 1.0);
+        }
+        to {
+          opacity: 1.0;
+          transform: scale(1.09, 1.09);
+        }
+      } */
+
+      div {
+        width: 100px;
+        height: 30px;
+
+        text-align: center;
+        font-weight: bold;
+        
+
+        opacity: 0.8;
+      }
+    </style>
+    <!-- <script src="js/localStorage.js"></script>
+    <script>
+      window.localStorage.setItem(
+        "update_ver",
+        "1.0.0"
+      );
+
+      const up_date_ver = window.localStorage.getItem("update");
+      function up_date_log_output(){
+        if( up_date_ver == "1.0.1" ){
+          return;
+        }
+        if( up_date_ver == "1.0.0" ){
+          window.localStorage.setItem(
+            "update_ver",
+            "1.0.1"
+          );
+          window.open("update_bug_fix.html")
+        }
+      }
+      window.onload = function (){
+        up_date_log_output()
+      }
+      // window.localStorage.setItem(
+      //   "update_ver",
+        
+      // );
+    </script> -->
+  </head>
+  <body>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th style="font-size: 20px;" colspan="4">by namolla | ver. 1.1.0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_count" onclick="is_checked_count()" checked></td>
+          <td><a href="count.html"><button id="desc_count" style="background-color: chocolate;"><p>카운트</p></button></a></td>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_count_x6" onclick="is_checked_count_x6()" checked></td>
+          <td><a href="mo_score_count.html"><button id="desc_count_x6" style="background-color: chartreuse;"><p>카운트 x6</p></button></a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_rotho" onclick="is_checked_rotho()" checked></td>
+          <td><a href="rotho.html"><button id="desc_rotho" style="background-color: magenta"><p>로또<br>추천</p></button></a></td>
+          <td style= "text-align: right;"><input type="checkbox" id="checkbox_drawing" onclick="is_checked_drawing()" checked></td>
+          <td><a href="drawing.html"><button id="desc_drawing" style="background-color: mediumslateblue"><p>숫자<br>뽑기</p></button></a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><input type="checkbox" id="checkbox_ja_drawing" onclick="is_checked_ja_drawing()" checked></td>
+          <td><a href="ja_drawing_index.html"><button id="desc_ja_drawing" style="background-color: darkgreen;">자리<br>뽑기</button></a></td>
+          <td></td>
+          <td><button onclick="window.open('update_bug_fix.html')" style="background-color: gray;">업데이트<br>확인</button></td>
+        </tr>
+      </tbody>
+    </table> -->
+
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="count.html"><div id="desc_count" style="background-color: chocolate;"><p>카운트</p></div></a></td>
+          <td><a href="mo_score_count.html"><div id="desc_count_x6" style="background-color: chartreuse;"><p>카운트 x6</p></div></a></td>
+          <td><a href="rotho.html"><div id="desc_rotho" style="background-color: magenta"><p>로또 추천</p></div></a></td>
+          <td><a href="drawing.html"><div id="desc_drawing" style="background-color: mediumslateblue"><p>숫자 뽑기</p></div></a></td>
+          <td><a href="ja_drawing_index.html"><div id="desc_ja_drawing" style="background-color: darkgreen;"><p>자리 뽑기</p></div></a></td>
+          <td><div onclick="window.open('update_bug_fix.html')" style="background-color: gray;"><p>업데이트 확인</p></div></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function showDetail_count() {
+        document.querySelector("#desc_count").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_count() {
+        document.querySelector("#desc_count").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_count() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_count = document.getElementById('checkbox_count');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_count = checkbox_count.checked; //true == 채크 /false == 채크 안됌
+        
+        if( is_checked_count == true ){
+          showDetail_count();
+        }
+        if( is_checked_count == false ){
+          hideDetail_count();
+        }
+      
+      }
+
+
+      function showDetail_count_x6() {
+        document.querySelector("#desc_count_x6").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_count_x6() {
+        document.querySelector("#desc_count_x6").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_count_x6() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_count_x6 = document.getElementById('checkbox_count_x6');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_count_x6 = checkbox_count_x6.checked; //true == 채크 /false == 채크 안됌
+        
+        if( is_checked_count_x6 == true ){
+          showDetail_count_x6();
+        }
+        if( is_checked_count_x6 == false ){
+          hideDetail_count_x6();
+        }
+      
+      }
+
+
+      function showDetail_rotho() {
+        document.querySelector("#desc_rotho").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_rotho() {
+        document.querySelector("#desc_rotho").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_rotho() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_rotho = document.getElementById('checkbox_rotho');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_rotho = checkbox_rotho.checked; //true == 채크 /false == 채크 안됌
+        
+        if( is_checked_rotho == true ){
+          showDetail_rotho();
+        }
+        if( is_checked_rotho == false ){
+          hideDetail_rotho();
+        }
+      
+      }
+
+
+      function showDetail_drawing() {
+        document.querySelector("#desc_drawing").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_drawing() {
+        document.querySelector("#desc_drawing").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_drawing() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_drawing = document.getElementById('checkbox_drawing');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_drawing = checkbox_drawing.checked; //true == 채크 /false == 채크 안됌
+
+        if( is_checked_drawing == true ){
+          showDetail_drawing();
+        }
+        if( is_checked_drawing == false ){
+          hideDetail_drawing();
+        }
+      
+      }
+
+
+      function showDetail_ja_drawing() {
+        document.querySelector("#desc_ja_drawing").style.display = "block"
+        // document.querySelector("#open_count").style.display = "none"
+      }
+      function hideDetail_ja_drawing() {
+        document.querySelector("#desc_ja_drawing").style.display = "none"
+        // document.querySelector("#open_count").style.display = "block"
+      }
+      function is_checked_ja_drawing() {
+  
+        // 1. checkbox element를 찾습니다.
+        const checkbox_ja_drawing = document.getElementById('checkbox_ja_drawing');
+
+        // 2. checked 속성을 체크합니다.
+        const is_checked_ja_drawing = checkbox_ja_drawing.checked; //true == 채크 /false == 채크 안됌
+        
+        if( is_checked_ja_drawing == true ){
+          showDetail_ja_drawing();
+        }
+        if( is_checked_ja_drawing == false ){
+          hideDetail_ja_drawing();
+        }
+      
+      }
+    </script>
+    <!-- <p style="font-size: 1px;">유튜브 나몰라 tv  <a href="https://www.youtube.com/@namolla2125">https://www.youtube.com/@namolla2125</a></p> -->
+  </body>
+</html>

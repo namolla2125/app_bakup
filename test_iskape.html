@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <button onclick="iskape.n()">\n 공백</button>
+    <button onclick="iskape.t()">\t 수평 탭</button>
+    <button onclick="iskape.v()">\v 수직 탭</button>
+    <button onclick="iskape.b()">\b 백 스페이스</button>
+    <button onclick="iskape.r()">\r 복귀</button>
+
+    <div>
+
+    </div>
+    <script>
+      var iskape = {
+        n: function(){
+          document.querySelector("div").textContent = "나는 \n 바보다"
+        },
+        t: function(){
+          document.querySelector("div").textContent = "나는\t바보다"
+        },
+        v: function(){
+          document.querySelector("div").textContent = "나는\v바보다"
+        },
+        b: function(){
+          document.querySelector("div").textContent = "나는\b바보다"
+        },
+        r: function(){
+          document.querySelector("div").textContent = "나는\r바보다"
+        },
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8"  content="initial-scale : 10">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <style>
+      input {
+        width: 156px;
+        height: 52px;
+
+        border-radius: 5px;
+        border: none;
+
+        background-color: gold;
+
+        text-align: center;
+
+        font-size: 15px;
+
+        font-family: 'Hi Melody', cursive;
+        font-weight: bold;
+
+      }
+
+      button {
+        width: 312px;
+        height: 52px;
+
+        background-color: aqua;
+
+        border-radius: 5px;
+        border: none;
+
+        text-align: center;
+
+        font-size: 17px;
+
+        font-family: 'Hi Melody', cursive;
+        font-weight: bold;
+      }
+
+      .d_ {
+        width: 260px;
+        height: 78px;
+
+        border-radius: 6px;
+        border: none;
+
+        background-color: mediumslateblue;
+
+        font-size: 20px;
+        text-align: center;
+
+        font-family: 'Hi Melody', cursive;
+        font-weight: bold;
+
+      }
+
+      .p {
+        width: 156px;
+        height: 52px;
+
+        border-radius: 5px;
+        border: none;
+
+        background-color: lightgray;
+
+        text-align: center;
+
+        font-size: 30px;
+
+        font-family: 'Hi Melody', cursive;
+        font-weight: bold;
+      }
+
+      body {
+        background-color: #F2AE1D;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    
+
+
+    <p><input type="text" id="start_"  placeholder="1번 칸"> ~ <input type="text" id="end_" placeholder="2번 칸"></p>
+
+    <button onclick="drawing()">뽑기</button>
+
+    <p id="output" class="p"></p>
+
+    <a href="index.html"><button class="d_"><p>돌아가기</p></button></a>
+    <script>
+      function drawing(){
+        var p_output = document.querySelector("#output");
+        var start_= document.getElementById("start_").value;
+        var end_= Number(document.getElementById("end_").value)+1
+
+        if( start_>end_ ){
+          alert("2번 칸 보다 1번 칸이 더 작아야 합니다.")
+        }
+
+        var output_value = Math.floor((Math.random() *  (end_ - start_)) + 1 );
+
+        p_output.textContent = output_value;
+      }
+    </script>
+    <br>
+    <br>
+    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
+      <p>
+        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
+      </p>
+    </div>
+  </body>
+</html>

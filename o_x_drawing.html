@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      div {
+        background-color: #FEF8E7;
+        width: 100vw;
+        height: 90vh;
+        line-height: 90vh;
+
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <label><b style="color: blue">O</b>: <input type="text" id="o" onkeyup="onKeyUp()">명     <b style="color: red">X</b>: <input type="text" id="x" onkeyup="onKeyUp()">명    <button onclick="">준비하기</button></label>
+    <div id="img-o">
+      <img src="img/o_x_drawing/o.png">
+    </div>
+    <div id="img-x">
+      <img src="img/o_x_drawing/x.png">
+    </div>
+    <script>
+      var showhide = {
+        o_show: function(){
+          document.querySelector("#img-o").style.display = "block"; 
+        },
+        x_show: function(){
+          document.querySelector("#img-x").style.display = "block"; 
+        },
+        o_hide: function(){
+          document.querySelector("#img-o").style.display = "none"; 
+        },
+        x_hide: function(){
+          document.querySelector("#img-x").style.display = "none"; 
+        }
+      }
+      // var o_s = 0;
+      // var x_s = 0;
+      // var o_x = 0;
+
+      // var sun_o = [];
+      // var sun_x = [];
+      // var random = 0;
+      // function onKeyUp (){
+      //   o_s =  
+      //   x_s = Number(document.getElementById("x").value);
+      // }
+
+      // function setting (){
+      //   o_x = o_s+x_s;
+      //   for(var i = 1; i > o_x-1; i++){
+      //     random = Math.floor(Math.random() * 2 +1)
+      //     console.log(random)
+      //   }
+
+      // }
+      // function o_x_drawing (){
+
+      // }
+      var o = Number(document.getElementById("o").value);
+      var x = Number(document.getElementById("x").value);
+      var o_x = o + x;
+      var o_x_list = [
+                          
+      ]
+      function junbe(){
+        o = Number(document.getElementById("o").value);
+        x = Number(document.getElementById("x").value);
+        o_x = o + x;
+        
+        for(var i = 0; i <= o_x; i++){
+          
+        }
+      }
+
+      
+    </script>
+  </body>
+</html>

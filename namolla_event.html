@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>개발중.......................................................................................................................................</h1>
+    <button id="n" onclick="mo()">피드백 보내기</button>
+    <script>
+      var namolla_event_pin = 0;
+      function namolla_event_text(n,s){
+        window.addEventListener("keydown", namolla_event => {
+          var _ahffk_ = prompt("몰2_나1_라3_2학년반5_1학년반4_4학년반7_3학년반6_t8_v9  "+s+"번째");
+          if( _ahffk_ || namolla_event == n ){
+            namolla_event_pin++
+          }
+        });
+      }
+
+      document.getElementById("n").onclick = mo();
+      function mo(){
+        namolla_event_text("na",1);
+        namolla_event_text("mol",2);
+        namolla_event_text("la",3);
+        namolla_event_text("5",4);
+        namolla_event_text("5",5);
+        namolla_event_text("2",6);
+        namolla_event_text("3",7);
+        namolla_event_text("t",8);
+        namolla_event_text("v",9);
+        if(namolla_event_pin == 9){
+          alert("인증 성공!!")
+          window.open();
+        }
+      }
+
+    </script>
+  </body>
+</html>

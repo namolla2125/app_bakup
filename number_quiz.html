@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <div id="setting">
+    <h1>맞추고 싶은 수를 정하세요.</h1>
+    <p><input type="text" id="number-start" placeholder="숫자만 가능합니다!"> ~ <input type="text" id="number-end"
+        placeholder="숫자만 가능합니다!"></p>
+
+    <button onclick="onclick_number()">확인</button>
+  </div>
+  <div id="game">
+
+  </div>
+
+  <script>
+
+
+    var start_ = 0;
+    var end_ = 0;
+
+    var random_number = 0;
+    function onclick_number() {
+      start_ = Number(document.getElementById("number-start").value);
+      end_ = Number(document.getElementById("number-end").value) + 1
+
+      if (start_ > end_) {
+        alert("2번 칸 보다 1번 칸이 더 작아야 합니다.")
+      }
+
+      random_number = Math.floor((Math.random() * (end_ - start_)) + 1);
+      console.log(random_number);
+    }
+
+
+
+    var setting_game = {
+      settingShow: function () {
+        document.querySelector("#setting").style.display = "block";
+      },
+      settingHide: function () {
+        document.querySelector("#setting").style.display = "none";
+      },
+      gameShow: function () {
+        document.querySelector("#game").style.display = "block";
+      },
+      gameHide: function () {
+        document.querySelector("#game").style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

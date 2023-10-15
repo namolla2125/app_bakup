@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="timer">
+      <div id="time">
+        <input id="min" type="text" value="00">
+        <h1>:</h1>
+        <input id="sec" type="text" value="00">
+      </div>
+      <div id="menu">
+        <div id="1m">1분</div>
+        <div id="2m">2분</div>
+        <div id="3m">3분</div>
+        <div id="5m">5분</div>
+        <h2 id="start">시작</h2>
+        <div id="10m">10분</div>
+        <div id="15m">15분</div>
+        <div id="20m">20분</div>
+        <div id="30m">30분</div>
+      </div>
+    </div>
+    <script>
+      let gd = 0;
+      let mins = 0, secs = 0;
+
+
+
+
+      let clock = () => {
+        if(mins === "00" && secs === "00" && gd === 0
+        && mins === 0 && secs === 0) {
+          makeNoti();
+          gd = 1;
+          return;
+        }
+
+        gd = 0;
+
+        timer_secs = (60 * mins) + (secs);
+        
+        mins = parseInt((timer_secs % 3600) / 60);
+        secs = timer_secs % 60;
+
+        mins = (mins < 10) ? "0" + mins : mins;
+        secs = (secs < 10) ? "0" + secs : secs; 
+
+        var inputMin = document.querySelector("#min").value;
+        var inputSec = document.querySelector("#sec").value;
+
+        inputMin = mins;
+        inputSec = secs;
+      }
+
+      setInterval(clock, 1000);
+      //--------------
+      askNotificationPermission();
+
+      function makeNoti() {
+        // 사용자 응답에 따라 단추를 보이거나 숨기도록 설정
+        if (Notification.permission === "denied" || Notification.permission === "default") {
+          alert("알림이 차단된 상태입니다. 알림 권한을 허용해주세요.");
+        } else {
+
+          let notification = new Notification("타이머", { // "test" => 제목
+            body: "타이머가 종료되었습니다.", // 메세지
+            icon: `./img/End_timer.png`, // 아이콘
+            requireInteraction: true
+          });
+
+          //알림 클릭 시 이벤트
+          notification.addEventListener("click", () => {
+            window.open('./end_timer.html');
+          });
+
+        }
+      }
+
+      function askNotificationPermission() {
+        console.log("권한 묻기");
+        // 권한을 실제로 요구하는 함수
+        function handlePermission(permission) {
+          // 사용자의 응답에 관계 없이 크롬이 정보를 저장할 수 있도록 함
+          if (!("permission" in Notification)) {
+            Notification.permission = permission;
+          }
+        }
+
+        // 브라우저가 알림을 지원하는지 확인
+        if (!("Notification" in window)) {
+          console.log("이 브라우저는 알림을 지원하지 않습니다.");
+        } else {
+          if (checkNotificationPromise()) {
+            Notification.requestPermission().then((permission) => {
+              handlePermission(permission);
+            });
+          } else {
+            Notification.requestPermission(function (permission) {
+              handlePermission(permission);
+            });
+          }
+        }
+      }
+
+      function checkNotificationPromise() {
+        try {
+          Notification.requestPermission().then();
+        } catch (e) {
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background: url("./img/bg_01.jpg");
+        display: flex;
+      }
+      #main {
+        width: 600px;
+        height: 800px;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+      }
+      #score {
+        width: 400px;
+        height: 200px;
+        font-size: 100px;
+        font-weight: bold;
+        font-family: 'Hi Melody', cursive;
+        display: inline-block;
+      }
+      #button {
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+        border: 3px lightskyblue solid;
+        border-radius: 50%;
+        box-shadow: 13px 10px lightblue;
+        background-color: #f2ae1d;
+      }
+      #button:active {
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+        border: 3px lightskyblue solid;
+        border-radius: 50%;
+        box-shadow: 8px 5px lightblue;
+        background-color: #f2ae1d;
+      }
+      .menu {
+        width: 100px;
+        height: 20px;
+        font-weight: bold;
+        font-family: 'Hi Melody', cursive;
+        border: 2.5px black solid;
+        border-radius: 3px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="score">0</div>
+      <div id="button"></div>
+    </div>
+    <div id="menu">
+      <div id="save" class="menu">저장</div>
+      <div id="load" class="menu">불러오기</div>
+    </div>
+    <script>
+      var value = {
+          score: 0
+      }
+      if(localStorage.getItem("namollatoolbox-click-score") == null 
+      || localStorage.getItem("namollatoolbox-click-score") == ""){
+        localStorage.setItem("namollatoolbox-click-score", JSON.stringify(value))
+      }
+      document.getElementById("button").onclick = function(){
+        value.score = value.score + 1;
+        document.querySelector("#score").textContent = value.score;
+      }
+      document.getElementById("save").onclick = function(){
+        localStorage.setItem("namollatoolbox-click-score", JSON.stringify(value))
+      }
+      document.getElementById("load").onclick = function(){
+        value = JSON.parse(localStorage.getItem("namollatoolbox-click-score"))
+        document.querySelector("#score").textContent = value.score;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+      th {
+        height: 50px;
+        background-color: chartreuse;
+        /* border-radius: 50px; */
+      }
+      td {
+        background-color: darkorange;
+        width: 50px;
+        height: 50px;
+        /* border-radius: 50%; */
+        cursor: pointer;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <th id="th_01" colspan="5">총 0줄입니다.</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="1"><input type="text"></td>
+          <td id="2"><input type="text"></td>
+          <td id="3"><input type="text"></td>
+          <td id="4"><input type="text"></td>
+          <td id="5"><input type="text"></td>
+        </tr>
+        <tr>
+          <td id="6"><input type="text"></td>
+          <td id="7"><input type="text"></td>
+          <td id="8"><input type="text"></td>
+          <td id="9"><input type="text"></td>
+          <td id="10"><input type="text"></td>
+        </tr>
+        <tr>
+          <td id="11"><input type="text"></td>
+          <td id="12"><input type="text"></td>
+          <td id="13"><input type="text"></td>
+          <td id="14"><input type="text"></td>
+          <td id="15"><input type="text"></td>
+        </tr>
+        <tr>
+          <td id="16"><input type="text"></td>
+          <td id="17"><input type="text"></td>
+          <td id="18"><input type="text"></td>
+          <td id="19"><input type="text"></td>
+          <td id="20"><input type="text"></td>
+        </tr>
+        <tr>
+          <td id="21"><input type="text"></td>
+          <td id="22"><input type="text"></td>
+          <td id="23"><input type="text"></td>
+          <td id="24"><input type="text"></td>
+          <td id="25"><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      window.onload = function(){
+        document.querySelector("th").textContent = "총 0줄 입니다";
+      }
+      var sun = 0;
+      var binggopan = [
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0
+      ];
+      function ok_j (){
+        if(binggopan[0] == 1 && binggopan[1] == 1 && binggopan[2] == 1 && binggopan[3] == 1 && binggopan[4] == 1){
+          binggopan[0] = 2;
+          binggopan[1] = 2;
+          binggopan[2] = 2;
+          binggopan[3] = 2;
+          binggopan[4] = 2;
+          sun++;
+        }
+        if(binggopan[5] == 1 && binggopan[6] == 1 && binggopan[7] == 1 && binggopan[8] == 1 && binggopan[9] == 1){
+          binggopan[5] = 2;
+          binggopan[6] = 2;
+          binggopan[7] = 2;
+          binggopan[8] = 2;
+          binggopan[9] = 2;
+          sun++;
+        }
+        if(binggopan[10] == 1 && binggopan[11] == 1 && binggopan[12] == 1 && binggopan[13] == 1 && binggopan[14] == 1){
+          binggopan[10] = 2;
+          binggopan[11] = 2;
+          binggopan[12] = 2;
+          binggopan[13] = 2;
+          binggopan[14] = 2;
+          sun++;
+        }
+        if(binggopan[15] == 1 && binggopan[16] == 1 && binggopan[17] == 1 && binggopan[18] == 1 && binggopan[19] == 1){
+          binggopan[15] = 2;
+          binggopan[16] = 2;
+          binggopan[17] = 2;
+          binggopan[18] = 2;
+          binggopan[19] = 2;
+          sun++;
+        }
+        if(binggopan[20] == 1 && binggopan[21] == 1 && binggopan[22] == 1 && binggopan[23] == 1 && binggopan[24] == 1){
+          binggopan[20] = 2;
+          binggopan[21] = 2;
+          binggopan[22] = 2;
+          binggopan[23] = 2;
+          binggopan[24] = 2;
+          sun++;
+        }
+        
+        //--------------------------------------------------------------------------------------------------------------
+
+        if(binggopan[0] == 1 && binggopan[5] == 1 && binggopan[10] == 1 && binggopan[15] == 1 && binggopan[20] == 1){
+          binggopan[0] = 2;
+          binggopan[5] = 2;
+          binggopan[10] = 2;
+          binggopan[15] = 2;
+          binggopan[20] = 2;
+          sun++;
+        }
+        if(binggopan[1] == 1 && binggopan[6] == 1 && binggopan[11] == 1 && binggopan[16] == 1 && binggopan[21] == 1){
+          binggopan[1] = 2;
+          binggopan[6] = 2;
+          binggopan[11] = 2;
+          binggopan[16] = 2;
+          binggopan[21] = 2;
+          sun++;
+        }
+        if(binggopan[2] == 1 && binggopan[7] == 1 && binggopan[12] == 1 && binggopan[17] == 1 && binggopan[22] == 1){
+          binggopan[2] = 2;
+          binggopan[7] = 2;
+          binggopan[12] = 2;
+          binggopan[17] = 2;
+          binggopan[22] = 2;
+          sun++;
+        }
+        if(binggopan[3] == 1 && binggopan[8] == 1 && binggopan[13] == 1 && binggopan[18] == 1 && binggopan[23] == 1){
+          binggopan[3] = 2;
+          binggopan[8] = 2;
+          binggopan[13] = 2;
+          binggopan[8] = 2;
+          binggopan[23] = 2;
+          sun++;
+        }
+        if(binggopan[4] == 1 && binggopan[9] == 1 && binggopan[14] == 1 && binggopan[19] == 1 && binggopan[24] == 1){
+          binggopan[4] = 2;
+          binggopan[9] = 2;
+          binggopan[14] = 2;
+          binggopan[19] = 2;
+          binggopan[24] = 2;
+          sun++;
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+
+        if(binggopan[0] == 1 && binggopan[6] == 1 && binggopan[12] == 1 && binggopan[18] == 1 && binggopan[24] == 1){
+          binggopan[0] = 2;
+          binggopan[6] = 2;
+          binggopan[12] = 2;
+          binggopan[18] = 2;
+          binggopan[24] = 2;
+          sun++;
+        }
+        if(binggopan[4] == 1 && binggopan[8] == 1 && binggopan[12] == 1 && binggopan[16] == 1 && binggopan[20] == 1){
+          binggopan[4] = 2;
+          binggopan[8] = 2;
+          binggopan[12] = 2;
+          binggopan[16] = 2;
+          binggopan[20] = 2;
+          sun++;
+        }
+        // for(var i = 0; i <= 25; i = i + 5){
+        //   if(binggopan[i] == 1 && binggopan[i+1] == 1 && binggopan[i+2] == 1 && binggopan[i+3] == 1 && binggopan[i+4] == 1){
+        //     sun++;
+        //   }
+        //   // for(var j = 0; j <= 25; j = j + 5){
+
+        //   // }
+        // }
+      }
+      function onclick_(id){
+        document.getElementById(id).onclick = (e) => {
+          document.getElementById(id).style.backgroundColor = "chartreuse";
+          binggopan[id-1] = 1;
+          // for(var i = 0; i <= 24; i++){
+          //   if(binggopan[i] == 2){
+          //     binggopan[i] = 1;
+          //   }
+          // }
+          ok_j()
+          // for(var i = 0; i <= 24; i++){
+          //   if(binggopan[i] == 1){
+          //     binggopan[i] = 2;
+          //   }
+          // }
+          document.getElementById("th_01").textContent = "총 "+sun+"줄 입니다";
+        };
+      }
+      onclick_(1);
+      onclick_(2);
+      onclick_(3);
+      onclick_(4);
+      onclick_(5);
+      onclick_(6);
+      onclick_(7);
+      onclick_(8);
+      onclick_(9);
+      onclick_(10);
+      onclick_(11);
+      onclick_(12);
+      onclick_(13);
+      onclick_(14);
+      onclick_(15);
+      onclick_(16);
+      onclick_(17);
+      onclick_(18);
+      onclick_(19);
+      onclick_(20);
+      onclick_(21);
+      onclick_(22);
+      onclick_(23);
+      onclick_(24);
+      onclick_(25);
+    </script>
+  </body>
+</html>
