@@ -48,3 +48,28 @@ canvas.addEventListener("mouseup", () => {
   isDrawing = false;
   ctx.beginPath();
 })
+
+canvas.addEventListener("touchstart", e => {
+  document.body.style.overflow = "hidden";
+  isDrawing = true;
+  startX = e.changedTouches[0].clientX;
+  startY = e.changedTouches[0].clientY;
+  console.log(startX + " : " + e.clientY);
+  console.log("a");
+})
+canvas.addEventListener("touchmove", (e) => {
+  if(!isDrawing) return;
+  document.body.style.overflow = "hidden";
+  ctx.lineWidth = lineWidth;
+  ctx.lineCap = "round";
+  ctx.lineTo(e.changedTouches[0].clientX, e.changedTouches[0].clientY - canvasOffsetY);
+  // - canvasOffsetY
+  ctx.stroke();
+  console.log("b");
+})
+canvas.addEventListener("touchend", () => {
+  document.body.style.overflow = "auto";
+  isDrawing = false;
+  ctx.beginPath();
+  console.log("c");
+})
