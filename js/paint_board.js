@@ -31,6 +31,7 @@ toolbar.addEventListener("click", e => {
 })
 
 canvas.addEventListener("mousedown", e => {
+  document.body.style.overflow = "hidden";
   isDrawing = true;
   startX = e.clientX;
   startY = e.clientY;
@@ -38,6 +39,7 @@ canvas.addEventListener("mousedown", e => {
 })
 canvas.addEventListener("mousemove", (e) => {
   if(!isDrawing) return;
+  document.body.style.overflow = "hidden";
   ctx.lineWidth = lineWidth;
   ctx.lineCap = "round";
   ctx.lineTo(e.clientX, e.clientY - canvasOffsetY);
@@ -45,6 +47,7 @@ canvas.addEventListener("mousemove", (e) => {
   ctx.stroke();
 })
 canvas.addEventListener("mouseup", () => {
+  document.body.style.overflow = "auto";
   isDrawing = false;
   ctx.beginPath();
 })

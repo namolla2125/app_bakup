@@ -12,9 +12,9 @@ function is_checked(name){
     document.querySelector('#desc_'+name).style.display = "none";
   }
 }
-window.onload = function(){
+/* window.onload = function(){
   if (confirm("편지가 왔어요!\n확인해 보실래요?\n확인(예) 또는 취소(아니오)를 선택해주세요.")) {
     // 취소(아니오) 버튼 클릭 시 이벤트
     window.open("../popup.html")
   }
-}
+} */

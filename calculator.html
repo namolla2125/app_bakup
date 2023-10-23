@@ -3,188 +3,68 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
     <style>
       td {
         width: 100px;
         height: 100px;
-      }
-      .button_w_100px {
-        width: 100px;
-        height: 100px;
-      }
-      .button_w_200px {
-        width: 204px;
-        height: 100px;
-      }
-      button {
-        font-family: 'Hi Melody', cursive;
-
-        font-weight: bold;
-        font-size: 50px;
-
+        background-color: burlywood;
+        border: none;
+        border-radius: 50%;
         text-align: center;
-
-        border: none;
-        border-radius: 50px;
-
-        background-color: skyblue;
-
-        box-shadow: 7px 7px lightblue;
-        text-shadow: 7px 7px lightblue;
       }
-      button:active {
-        background-color: aqua;
-        box-shadow: 7px 7px skyblue;
-        text-shadow: 7px 7px skyblue;
+      div#header {
+        width: 418px;
+        height: 100px;
       }
-      button:hover {
-        cursor: pointer;
+      div#before {
+        width: 418px;
+        height: 30px;
       }
-      td[id="output"]{
-        background-color: skyblue;
-
-        box-shadow: 7px 7px lightblue;
-        text-shadow: 7px 7px lightblue;
-        border: none;
-        border-radius: 50px;
+      div#return {
+        width: 418px;
+        height: 70px;
       }
     </style>
   </head>
   <body>
+    <div id="header">
+      <div id="return"></div>
+      <div id="before"></div>
+    </div>
     <table>
-      <thead>
-        <tr>
-          <td colspan="4" id="output"></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2"><button class="button_w_200px">C</button></td>
-          <td><button class="button_w_100px" onclick="onclick_operator('%'); onclick_()">%</button></td>
-          <td><button class="button_w_100px" onclick="onclick_operator('/'); onclick_()">÷</button></td>
-        </tr>
-        <tr>
-          <td><button class="button_w_100px" onclick="onclick_number(7); onclick_()">7</button></td>
-          <td><button class="button_w_100px" onclick="onclick_number(8); onclick_()">8</button></td>
-          <td><button class="button_w_100px" onclick="onclick_number(9); onclick_()">9</button></td>
-          <td><button class="button_w_100px" onclick="onclick_operator('*'); onclick_()">X</button></td>
-        </tr>
-        <tr>
-          <td><button class="button_w_100px" onclick="onclick_number(4); onclick_()">4</button></td>
-          <td><button class="button_w_100px" onclick="onclick_number(5); onclick_()">5</button></td>
-          <td><button class="button_w_100px" onclick="onclick_number(6); onclick_()">6</button></td>
-          <td><button class="button_w_100px" onclick="onclick_operator('-'); onclick_()">-</button></td>
-        </tr>
-        <tr>
-          <td><button class="button_w_100px" onclick="onclick_number(1); onclick_()">1</button></td>
-          <td><button class="button_w_100px" onclick="onclick_number(2); onclick_()">2</button></td>
-          <td><button class="button_w_100px" onclick="onclick_number(3); onclick_()">3</button></td>
-          <td><button class="button_w_100px" onclick="onclick_operator('+'); onclick_()">+</button></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><button class="button_w_100px" onclick="onclick_number(0); onclick_()">0</button></td>
-          <td colspan="2"><button class="button_w_200px" onclick="result_value_()">=</button></td>
-        </tr>
-      </tbody>
+      <tr>
+        <td></td>
+        <td>C</td>
+        <td>%</td>
+        <td>÷</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>×</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>－</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>＋</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>0</td>
+        <td>.</td>
+        <td>＝</td>
+      </tr>
     </table>
-
     <script>
-      var operator = 0; //1 = +; 2 = -; 3 = *; 4 = /; 5 = %;
 
-      var front = "";
-
-      var back = "";
-
-      var result_value = "";
-
-      var output = "";
-      
-      function onclick_number(number){
-        if( operator === 0 ){
-          front = front + number;
-          console.log("앞자리: "+front)
-        }
-        if( operator === 1 || operator === 2 || operator === 3 || operator === 4 || operator === 5 ){
-          back = back + number;
-          console.log("뒷자리: "+back)
-        }
-      }
-      function onclick_operator(operator_){
-        if( operator_ == "+" ){
-          operator = 1;
-          console.log("연산자: "+operator);
-        }
-        if( operator_ == "-" ){
-          operator = 2;
-          console.log("연산자: "+operator);
-        }
-        if( operator_ == "*" ){
-          operator = 3;
-          console.log("연산자: "+operator);
-        }
-        if( operator_ == "/" ){
-          operator = 4;
-          console.log("연산자: "+operator);
-        }
-        if( operator_ == "%" ){
-          operator = 5;
-          console.log("연산자: "+operator);
-        }
-      }
-      function onclick_(){
-        if( operator == 0 ){
-          document.getElementById("output").textContent = front;
-        }
-        if( operator == 1 ){
-          document.getElementById("output").textContent = front + "+" + back + "=" + result_value;
-        }
-        if( operator == 2 ){
-          document.getElementById("output").textContent = front + "-" + back + "=" + result_value;
-        }
-        if( operator == 3 ){
-          document.getElementById("output").textContent = front + "X" + back + "=" + result_value;
-        }
-        if( operator == 4 ){
-          document.getElementById("output").textContent = front + "÷" + back + "=" + result_value;
-        }
-        if( operator == 5 ){
-          document.getElementById("output").textContent = front + "%" + back + "=" + result_value;
-        }
-      }
-      function result_value_(){
-        var front_ = Number(front);
-        var back_ = Number(back);
-        if( operator == 1 ){
-          result_value = front_ + back_;
-          onclick_();
-          operator = 0;
-        }
-        if( operator == 2 ){
-          result_value = front_ - back_;
-          onclick_();
-          operator = 0;
-        }
-        if( operator == 3 ){
-          result_value = front_ * back_;
-          onclick_();
-          operator = 0;
-        }
-        if( operator == 4 ){
-          result_value = front_ / back_;
-          onclick_();
-          operator = 0;
-        }
-        if( operator == 5 ){
-          result_value = (front_ / back_) * 100;
-          onclick_();
-          operator = 0;
-        }
-      }
-      
     </script>
   </body>
 </html>
