@@ -18,6 +18,7 @@
         width: 100vw;
         height: 100vh;
         transition: all ease 1s;
+        transform: rotate(360deg);
       }
       body {
         font-family: 'Hi Melody', cursive;
@@ -38,12 +39,43 @@
         top: 0px;
         left: 0px;
       }
+      img#p {
+        transition: all ease 1s;
+        animation-name: ani-1;
+        animation-duration: 2.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      @keyframes ani-1 {
+        from {
+          transform: rotate(0deg);
+        }
+        16.66% {
+          transform: rotate(45deg);
+        }
+        33.33% {
+          transform: rotate(-45deg);
+        }
+        50.00% {
+          transform: rotate(-15deg);
+        }
+        66.66% {
+          transform: rotate(-45deg);
+        }
+        83.33% {
+          transform: rotate(45deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
     <div id="start">
       <h2>자리 뽑기를 시작하려면</h2>
       <p>엔터를 누르세요!!</p>
+      <img src="./img/ja_drawingg/pengdoli.png" id="p">
     </div>
 
     <table>
@@ -103,15 +135,6 @@
       ] 
       window.onload = function(){
         document.querySelector("table").style.display ='none';
-      }
-      window.addEventListener('keydown', (event) => {
-        if (event.code === "Enter") {
-          onlode();
-        }
-      });
-      function onlode(){
-        document.querySelector("table").style.display ='';
-        document.getElementById("start").style.display ='none';
         // console.log("a")
         var na = "";
         var bb = [];
@@ -134,9 +157,18 @@
             bb = name_list_y.shift();
           }
         }
-
-        document.querySelector("table").style.transform = "rotate(1turn)";
+        
       }
+      window.addEventListener('keydown', (event) => {
+        if (event.code === "Enter") {
+          document.querySelector("table").style.display ='';
+          document.getElementById("start").style.display ='none';
+          setTimeout(function() {
+            document.querySelector("table").style.transform = "rotate(0deg)";
+          }, 100);
+          
+        }
+      });
     </script>
     <br>
     <br>
