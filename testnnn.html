@@ -6,7 +6,6 @@
   </head>
   <body>
     <script>
-      window.onload = function(){
         function callJsonApi(url, saveFilePath) {  // Text API 호출 함수
           fetch(url)  // fetch를 통해 API 호출
             .then(response => response.json())  // 응답을 JSON으로 변환
@@ -21,10 +20,9 @@
         }
 
         // 사용 예시
-        const apiUrl = "https://apihub.kma.go.kr/api/json?authKey=VwnmJorFSWWJ5iaKxcll3g";
+        const apiUrl = "https://apihub.kma.go.kr/api/typ01/url/kma_sfctm2.php?stn=0&help=0&authKey=VwnmJorFSWWJ5iaKxcll3g";
         const savePath = "/path/to/save/file.json";
         callJsonApi(apiUrl, savePath);
-      }
       
     </script>
   </body>

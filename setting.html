@@ -44,66 +44,41 @@
       <div id="bg">
         <table id="bg-navebar">
           <tr>
-            <td id="bg-l" class="change-button">&#60;</td>
-            <td id="bg-t">베경</td>
-            <td id="bg-r" class="change-button">&#62;</td>
+            <td id="bg-t">베경색</td>
           </tr>
           <tr>
-            <td colspan="3" id="bg-preview"></td>
+            <td colspan="3"><input id="test" type="color" onchange="input()" value="#f2ae1d" class="js-input-color"></td>
+            
           </tr>
         </table>
         <!-- <div id="bg-preview"></div> -->
       </div>
-      <input id="test" type="color" onchange="input()" value="#f2ae1d">
     </div>
     <script>
-      function bgcolor_change(color, hex = true) {
-        if(hex == true){
-          document.querySelector("#bg-preview").style.backgroundColor = color;
-        }else if(hex == false){
-          document.querySelector("#bg-preview").style.background = `url("${color}")`;     
-        }
-      }
-      function load_bg_apply(bgcolor_and_img){
-        
-        if(bgcolor_and_img.substring(0, 1) === "#"
-        || bgcolor_and_img.substring(0, 1) === "r"){
-          bgcolor_change(bgcolor_and_img);
-        }else{
-          bgcolor_change(bgcolor_and_img, false);
-        }
+      function load_bg_apply(bgcolor){
+        document.querySelector(".js-input-color").value = bgcolor;
       }
       window.onload = function(){
         if(localStorage.getItem("namollatoolbox-setting") == null 
         || localStorage.getItem("namollatoolbox-setting") == ""){
           var test = {
             bg: ["#f2ae1d"]
-            //hex 형식 : (hex) ,,, img 형식 : 링크;
           }
           localStorage.setItem("namollatoolbox-setting", JSON.stringify(test))
         }
         var localStorageItem = JSON.parse(localStorage.getItem("namollatoolbox-setting"))
         var bgcolor = localStorageItem.bg[0];
-        document.getElementById("test").value = bgcolor;
         load_bg_apply(bgcolor);
       }
       
       function input(){
         var input___ = document.getElementById("test").value;
-        load_bg_apply(input___);
         var test = {
             bg: [input___]
         }
-        localStorage.setItem("namollatoolbox-setting", 
-        JSON.stringify(test))
+        localStorage.setItem("namollatoolbox-setting", JSON.stringify(test));
       }
+      
     </script>
-    <!-- 
-      설정 
-        로컬 스토리지에서 
-        값을 저장하고
-        값을 불러와서
-        셋팅 (지금 만들고 있는기능 = 베경)
-    ]-->
   </body>
 </html>
