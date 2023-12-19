@@ -4,6 +4,9 @@ td,th {
 
   text-align: center;
 }
+.bu {
+  transition: all 0.1s;
+}
 .td {
   width: 80px;
   height: 80px;

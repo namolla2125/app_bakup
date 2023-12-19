@@ -14,7 +14,7 @@
         border : 5px solid black; 
         border-collapse : collapse;
       }
-      table {
+      table#a {
         width: 100vw;
         height: 100vh;
         transition: all ease 1s;
@@ -79,9 +79,21 @@
       <img src="./img/ja_drawingg/pengdoli.png" id="p">
     </div>
 
-    <table>
+    <table id="a">
       <tr>
-        <td colspan="2" style="background-color: rgb(252, 206, 121); border : 5px solid black;">선생님</td>
+        <td style="background-color: rgb(252, 206, 121); border: 5px solid black; border-right: none;">선생님</td>
+        <td style="background-color: rgb(252, 206, 121); border: 5px solid black; border-left: none;">
+          <table style="width: 100%; height: 100%; border: none;">
+            <tr style="width: 100%; height: 50%; border: none;">
+              <td style="width: 50%; height: 100%; border: none;"></td>
+              <td style="width: 50%; height: 100%; border: none;"></td>
+            </tr>
+            <tr style="width: 100%; height: 50%; border: none;">
+              <td style="width: 50%; height: 100%; border: none;"></td>
+              <td style="font-size: 0.3em; background-color: #E32122;">펭돌이</td>
+            </tr>
+          </table>
+        </td>
         <td colspan="4" style="background-color: darkgreen; border : 5px solid rgb(86, 62, 20);">칠판</td>
       </tr>
       <tr>
@@ -114,7 +126,7 @@
         <td id="11_"></td>
         <td id="_11_"></td>
         <td id="12_"></td>
-        <td><img src="img/ja_drawingg/pengdoli.png"></td>
+        <td id="13_"></td>
       </tr>
     </table>
     <a href="img/ja_drawingg/pengdoli.png" download><button>팽돌이 사진 다운로드</button></a>
@@ -131,7 +143,7 @@
       var name_list_y = [
         "고도영", "김예나", "김지현",
         "박소민", "배채아", "신예담",
-        "윤서인", "임예원", 
+        "윤서인", "임예원", "오다율",
         "장별이", "정지인", "최서안", "최수진"
       ] 
       window.onload = function(){
@@ -150,7 +162,7 @@
         }
 
         for(var i = 1; name_list_y.length > 0; i++){
-          na = Math.floor(Math.random() * 12 + 1);
+          na = Math.floor(Math.random() * 13 + 1);
           console.log(i);
           if( document.getElementById(na+"_").innerHTML === ''){
             document.getElementById(na+"_").textContent = name_list_y[0];

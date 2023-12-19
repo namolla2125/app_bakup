@@ -3,78 +3,55 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="./js/bg_color_update.js"></script>
     <style>
-      body {
-        font-family: 'Hi Melody', cursive;
-        /* text-align: center; */
-        font-weight: bold;
-        font-size: 110%;
-        background-color: #F2AE1D;
-      }
-      button {
-        font-family: 'Hi Melody', cursive;
-        /* text-align: center; */
-        font-weight: bold;
-        font-size: 23px;
-        background-color: rgba(203, 203, 203, 20);
-        border: none;
-      }
-      hr {
-        background: black;
-        height: 2px;
-        border: 0;
-      }
+
     </style>
   </head>
   <body>
-    <div>
-      <h2>업데이트</h2>
-      <ul>
-        <li>
-          <p><a href="./time.html">시계(time.html)</a>가 세롭게 추가되었습니다.</p>
-        </li>
-        <li>
-          <p><a href="./click.html">클릭 게임(click.html)</a>이 세롭게 추가되었습니다.</p>
-        </li>
-        <li>
-          <p><a href="./paint_board.html">그림판(paint_board.html)</a>이 세롭게 추가되었습니다.</p>
-        </li>
-        <li>
-          <p><a href="./popup.html">편지 보기(popup.html)</a>가 세롭게 추가되었습니다.</p>
-        </li>
-      </ul>
-    </div>
-    <br>
-    <hr>
-    <br>
+    <h1>업데이트 기록</h1>
     <!-- <div>
-      <h2>버그 수정</h2>
-      <ul>
-         <li>
-          <p><a href="mo_score_count.html">카운트 x6 화면(mo_score_count.html)</a>에 1번째 카운터기에 높이가 달랐던 버그가 수정되었습니다.</p>
-        </li>
-        <li>
-          <p><a href="index.html">매인 화면(index.html)</a>에 버튼 옆에 있는 체크박스가 이벤트가 일어나는 버튼 옆이 아닌 멀리 떨어져 있던 버그가 수정되었습니다.</p>
-        </li>
-        <li>
-          <p><a href="index.html">매인 화면(index.html)</a>에 체크박스를 이용하여 필요없는 기능을 없에는 기능을 사용하면 옆에 있는 버튼의 위치가 바뀌는 버그가 수정되었습니다.</p>
-        </li>
-      </ul>
+      <h3>최근 업데이트</h3>
+      <details>
+        <summary>1.3.0<br><span style="color: #aaaaaa; font-size: small;">자세히보기</span></summary>
+        <span>
+          <br><br>
+        </span>
+      </details>
     </div> -->
-    <br>
-    <hr>
-    <br>
-    <div style="width: 100vw; text-align: center; font-family: 'Nanum Gothic', sans-serif;  font-size: 15px;">
-      <p>
-        Copyright 2023. 김민찬 All pictures cannot be copied without permission. 
-      </p>
+    <div>
+      <div id="scr-l">＜</div>
+      <div id="scr-main-01">
+        <div data-n="1"></div>
+        <div data-n="2"></div>
+        <div data-n="3"></div>
+      </div>
+      <div id="scr-main-02">
+        <div data-n="4"></div>
+        <div data-n="5"></div>
+        <div data-n="6"></div>
+      </div>
+      <div id="scr-main-03">
+        <div data-n="7"></div>
+        <div data-n="8"></div>
+        <div data-n="9"></div>
+      </div>
+      <div id="src-r">＞</div>
     </div>
+    <script>//나중에 배포시 js 파일로
+      const update_data = {
+        "ver.": {
+          "update-date": "",
+          "new-function": {
+            
+          }
+
+        }
+      }
+      function scr_loading(){ //최근 업데이트 목록 자동 로딩---
+        
+      }
+
+
+    </script>
   </body>
 </html>

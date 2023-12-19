@@ -3,70 +3,142 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+      #main {
+        width: 600px;
+        height: 600px;
+
+        background-color: #f2ae1d;
+
+        border-radius: 300px;
+        text-align: center;
+      }
+      .time_list_e {
+        width: 40px;
+        height: 30px;
+
+        background-color: rgb(255, 210, 112);
+        border-radius: 15px;
+
+        padding-top: 5px;
+      }
+      #time_list {
+        width: 600px;
+        height: 30px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        transform: translateY(160px);
+      }
+      #time {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        transform: translateY(250px);
+      }
+      h1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 40px;
+      }
+      input{
+        background-color: #ffe1a0;
+        text-align: center;
+        font-size: 70px;
+        width: 160px;
+        border-radius: 30px;
+        border: none;
+      }
+      #start {
+        width: 180px;
+        height: 50px;
+        
+        background-color: #ffe1a0;
+
+        margin-left: 210px;
+        margin-right: 210px;
+
+        transform: translateY(350px);
+        border-radius: 20px;
+
+        font-weight: 600;
+
+        padding-top: 17px;
+
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <div id="timer">
+    <div id="main">
+      <div id="time_list">
+        <div data-time="60s" class="time_list_e">1분</div>
+        <div data-time="120s" class="time_list_e">2분</div>
+        <div data-time="180s" class="time_list_e">3분</div>
+        <div data-time="300s" class="time_list_e">5분</div>
+        <div data-time="600s" class="time_list_e">10분</div>
+        <div data-time="660s" class="time_list_e">11분</div>
+        <div data-time="720s" class="time_list_e">12분</div>
+        <div data-time="780s" class="time_list_e">13분</div>
+        <div data-time="900s" class="time_list_e">15분</div>
+
+      </div>
       <div id="time">
-        <input id="min" type="text" value="00">
-        <h1>:</h1>
-        <input id="sec" type="text" value="00">
+        <input type="text" id="time-m" class="time" value="00">
+        <h1 class="time">  :  </h1>
+        <input type="text" id="time-s" class="time" value="00"> 
       </div>
-      <div id="menu">
-        <div id="1m">1분</div>
-        <div id="2m">2분</div>
-        <div id="3m">3분</div>
-        <div id="5m">5분</div>
-        <h2 id="start">시작</h2>
-        <div id="10m">10분</div>
-        <div id="15m">15분</div>
-        <div id="20m">20분</div>
-        <div id="30m">30분</div>
-      </div>
+      <div id="start">시작</div>
     </div>
+
+
+
     <script>
-      let gd = 0;
-      let mins = 0, secs = 0;
+      const start_button = document.getElementById("start");
+      const time_list_button = document.getElementsByClassName("time_list_e")
 
+      function getTimeAndSetTimePlus(setTime = false, inputS = false, inputM = false, el = false, startTimeM = false, startTimeS ){
+        if(setTime == false){
+          var dataSet = el.getAttribute("date-time");
+          
+          var time_sec = dataSet.replace("s","");
+        }else if(setTime == true){
 
+        }else{
 
-
-      let clock = () => {
-        if(mins === "00" && secs === "00" && gd === 0
-        && mins === 0 && secs === 0) {
-          makeNoti();
-          gd = 1;
-          return;
         }
-
-        gd = 0;
-
-        timer_secs = (60 * mins) + (secs);
-        
-        mins = parseInt((timer_secs % 3600) / 60);
-        secs = timer_secs % 60;
-
-        mins = (mins < 10) ? "0" + mins : mins;
-        secs = (secs < 10) ? "0" + secs : secs; 
-
-        var inputMin = document.querySelector("#min").value;
-        var inputSec = document.querySelector("#sec").value;
-
-        inputMin = mins;
-        inputSec = secs;
       }
 
-      setInterval(clock, 1000);
-      //--------------
-      askNotificationPermission();
+      time_list_button.forEach(el => {
+        el.onclick = function(){
+          
+        }
+      });
 
-      function makeNoti() {
+      start_button.onclick = function(){
+        var time_m = document.getElementById("time-m").value;
+        var time_s = document.getElementById("time-s").value;
+
+        
+
+      }
+
+
+
+      //-------------------------------------------------
+      function makeNoti(time) {
         // 사용자 응답에 따라 단추를 보이거나 숨기도록 설정
         if (Notification.permission === "denied" || Notification.permission === "default") {
           alert("알림이 차단된 상태입니다. 알림 권한을 허용해주세요.");
         } else {
 
           let notification = new Notification("타이머", { // "test" => 제목
-            body: "타이머가 종료되었습니다.", // 메세지
+            body: time+"분 타이머가 종료되었습니다.", // 메세지
             icon: `./img/End_timer.png`, // 아이콘
             requireInteraction: true
           });
