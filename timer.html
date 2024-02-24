@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+      
       #main {
-        width: 600px;
-        height: 600px;
+        width: 700px;
+        height: 700px;
 
         background-color: #f2ae1d;
 
-        border-radius: 300px;
+        border-radius: 350px;
         text-align: center;
+        margin: auto;
       }
       .time_list_e {
         width: 40px;
@@ -23,7 +25,7 @@
         padding-top: 5px;
       }
       #time_list {
-        width: 600px;
+        width: 700px;
         height: 30px;
 
         display: flex;
@@ -49,8 +51,8 @@
       input{
         background-color: #ffe1a0;
         text-align: center;
-        font-size: 70px;
-        width: 160px;
+        font-size: 80px;
+        width: 170px;
         border-radius: 30px;
         border: none;
       }
@@ -60,8 +62,8 @@
         
         background-color: #ffe1a0;
 
-        margin-left: 210px;
-        margin-right: 210px;
+        margin-left: 260px;
+        margin-right: 260px;
 
         transform: translateY(350px);
         border-radius: 20px;
@@ -72,73 +74,148 @@
 
         text-align: center;
       }
+      body {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
     </style>
   </head>
   <body>
-    <div id="main">
-      <div id="time_list">
-        <div data-time="60s" class="time_list_e">1분</div>
-        <div data-time="120s" class="time_list_e">2분</div>
-        <div data-time="180s" class="time_list_e">3분</div>
-        <div data-time="300s" class="time_list_e">5분</div>
-        <div data-time="600s" class="time_list_e">10분</div>
-        <div data-time="660s" class="time_list_e">11분</div>
-        <div data-time="720s" class="time_list_e">12분</div>
-        <div data-time="780s" class="time_list_e">13분</div>
-        <div data-time="900s" class="time_list_e">15분</div>
-
+    <div>
+      <div id="main">
+        <button id="ssss">시끄러운 모드</button>
+        <div id="time_list">
+          <div data-time="1m0" class="time_list_e">1분</div>
+          <div data-time="2m0" class="time_list_e">2분</div>
+          <div data-time="3m0" class="time_list_e">3분</div>
+          <div data-time="5m0" class="time_list_e">5분</div>
+          <div data-time="10m0" class="time_list_e">10분</div>
+          <div data-time="11m0" class="time_list_e">11분</div>
+          <div data-time="12m0" class="time_list_e">12분</div>
+          <div data-time="13m0" class="time_list_e">13분</div>
+          <div data-time="15m0" class="time_list_e">15분</div>
+        </div>
+        <div id="time">
+          <input type="text" id="time-m" class="time" value="00">
+          <h1 class="time">  :  </h1>
+          <input type="text" id="time-s" class="time" value="00"> 
+        </div>
+        <div id="start">시작</div>
+        <p style="display: none;" id="p_push">알림 권한을 허용해주시면 타이머 종료시 알림을 받을 수 있습니다</p>
       </div>
-      <div id="time">
-        <input type="text" id="time-m" class="time" value="00">
-        <h1 class="time">  :  </h1>
-        <input type="text" id="time-s" class="time" value="00"> 
-      </div>
-      <div id="start">시작</div>
+      <p>소리출처 https://pgtd.tistory.com/146     https://pgtd.tistory.com/110     https://pgtd.tistory.com/270</p>
     </div>
+    
 
+
+    
 
 
     <script>
-      const start_button = document.getElementById("start");
-      const time_list_button = document.getElementsByClassName("time_list_e")
+      const start_button = document.getElementById("start"); //"시작" 버튼 불러오기
+      const time_list_button = document.querySelectorAll(".time_list_e") //"시간 바로가기 목록" 불러오기
+      var time_min = 0; //시간 "분" 변수 선언
+      var time_sec = 0; //시간 "초" 변수 선언
 
-      function getTimeAndSetTimePlus(setTime = false, inputS = false, inputM = false, el = false, startTimeM = false, startTimeS ){
-        if(setTime == false){
-          var dataSet = el.getAttribute("date-time");
-          
-          var time_sec = dataSet.replace("s","");
-        }else if(setTime == true){
+      var buttonsss = 0; //시끄러운 모드 활성화 여부 확인용 번수 [0: 작동 안함, 1: 작동 함]
 
-        }else{
+      document.getElementById("ssss").onclick = function(){ //"시끄러운 모드 활성화 버튼"이 클릭 됐을떄
+        buttonsss = 1; //시끄러운 모드 활성화 
+      }
 
-        }
+      document.getElementById("time-m").onchange = function(){ // "시간 '분'" input의 값이 변경 되었을떄
+        time_min = document.getElementById("time-m").value; //시간 "분" 변수의 값을 "시간 '분'" input의 값으로 변경
+        time_min = (time_min < 10) ? "0" + time_min : time_min; //시간 표시할때 1의 자릿 수일 경우 문자열 앞에 "0"추가 
+        document.getElementById("time-m").value = time_min; //"시간 '분'" input의 값을 시간 "분" 변수의 값으로 변경
+      }
+      document.getElementById("time-s").onchange = function(){// "시간 '초'" input의 값이 변경 되었을떄
+        time_sec = document.getElementById("time-s").value;//시간 "초" 변수의 값을 "시간 '초'" input의 값으로 변경
+        time_sec = (time_sec < 10) ? "0" + time_sec : time_sec;//시간 표시할때 1의 자릿 수일 경우 문자열 앞에 "0"추가
+        document.getElementById("time-s").value = time_sec;//"시간 '초'" input의 값을 시간 "초" 변수의 값으로 변경
       }
 
       time_list_button.forEach(el => {
         el.onclick = function(){
+          var dataSet = el.getAttribute("data-time");
+
+          var getTime = dataSet.split("m");
+
+          time_min = getTime[0];
+          time_sec = getTime[1];
+
+          time_min = (time_min < 10) ? "0" + time_min : time_min;
+          time_sec = (time_sec < 10) ? "0" + time_sec : time_sec;
           
+          document.getElementById("time-m").value = time_min;
+          document.getElementById("time-s").value = time_sec;
         }
       });
-
+      var interval
+      clearInterval(interval);
       start_button.onclick = function(){
-        var time_m = document.getElementById("time-m").value;
-        var time_s = document.getElementById("time-s").value;
+        clearInterval(interval);
+        interval = setInterval(function(){
+          var time_m = document.getElementById("time-m");
+          var time_s = document.getElementById("time-s");
 
-        
+          var m_v = time_m.value;
+          var s_v = time_s.value;
 
+          m_v = Number(m_v);
+          s_v = Number(s_v);
+
+          if(m_v == 0 && s_v == 0){
+            
+            if(buttonsss == 1){
+              var audio = new Audio('./audio/타이머종료닭.mp3');
+              audio.play();
+              makeNoti()
+            }else {
+              var audio = new Audio('./audio/타이머종료일반.mp3');
+              audio.play();
+              makeNoti()
+            }
+            
+            clearInterval(interval);
+          }else if(s_v == 0){
+            m_v = m_v - 1;
+            s_v = 59;           
+          }else{
+            s_v = s_v - 1;
+          }
+
+          if(m_v == 0 && s_v == 10){
+            if(buttonsss == 1){
+              var audio = new Audio('./audio/타이머종료전닭.mp3');
+              audio.play();
+            }else {
+              var audio = new Audio('./audio/타이머종료전일반.mp3');
+              audio.play();
+            }
+          }
+
+          m_v = (m_v < 10) ? "0" + m_v : m_v;
+          s_v = (s_v < 10) ? "0" + s_v : s_v;
+
+          document.getElementById("time-m").value = m_v;
+          document.getElementById("time-s").value = s_v;
+        }, 1000);
       }
 
 
 
       //-------------------------------------------------
-      function makeNoti(time) {
+      function makeNoti() {
         // 사용자 응답에 따라 단추를 보이거나 숨기도록 설정
         if (Notification.permission === "denied" || Notification.permission === "default") {
-          alert("알림이 차단된 상태입니다. 알림 권한을 허용해주세요.");
+          document.getElementById("p_push").style.display = "block";
+          askNotificationPermission()
         } else {
 
           let notification = new Notification("타이머", { // "test" => 제목
-            body: time+"분 타이머가 종료되었습니다.", // 메세지
+            body: "타이머가 종료되었습니다.", // 메세지
             icon: `./img/End_timer.png`, // 아이콘
             requireInteraction: true
           });

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 뽑기 - 민찬 프로그램 2024 프로젝트</title>
+    <link href="css/drawseat.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+    <div id="setting"> <!-- 설정 div: 로컬 스토리지 저장-->
+      <h1>설정 하기</h1>
+      <div id="garoAndSero_setting"> <!-- 가로 세로 설정 div: js{append로 table 안 tr and td 생성}-->
+        <p>주의 사항: 설정을 안한 다른 계정으로 접속시 다시 설정을 해야합니다!</p>  <!-- 경고문: css{글씨 무지개 색} -->
+
+        <h2>가로 세로 설정</h2>
+        <label for="garo">가로: </label>
+        <input id="garo" type="number" min="1" max="10" value="1">칸 (ㅡ) <br>
+
+        <label for="sero">세로: </label>
+        <input id="sero" type="number" min="1" max="10" value="1">칸 (ㅣ) <br>
+      </div>
+      <hr>
+      <div> <!-- 이름 설정 div: js{, 자르고 list로 변경 후 뽑기} -->
+        <h2>이름 설정</h2>
+        <label for="n_name">남학생 이름</label>
+        <input id="n_name" type="text"><br> <!-- 2024/02/19: "응 싫어 안해~~!!😛"js{정규표현식으로 한글 and , 빼고 다 걸러내기}-->
+        
+        <label for="y_name">여학생 이름</label>
+        <input id="y_name" type="text"><br> <!-- 2024/02/19: "응 싫어 안해~~!!😛"js{정규표현식으로 한글 and , 빼고 다 걸러내기}-->
+
+        <div>
+          <p>
+            이름 설정시 주의사항: 이름은 쉼표(,)로 구분하기 <br>
+            ex: (<input type="text" value="뽀로로,크롱,에디,패티,포비,해리,루피">)
+          </p>
+        </div>
+        <hr>
+      </div>
+      <button id="setting_end">설정 완료</button>
+    </div> <!-- 설정 div end-->  
+    <div id="drawing"> <!-- 메인 div-->
+      <div id="start">
+        <h2>자리 뽑기를 시작하려면</h2>
+        <p>엔터를 누르세요!!</p>
+        <img src="./img/pengdoli.png" id="p">
+      </div>
+      <div>
+        <table id="table">
+
+        </table>
+        <div>
+          <button id="reset">초기화</button>
+        </div>
+      </div>
+      
+    </div> <!-- 메인 div end-->
+
+    <script src="./js/drawseat.js">
+      
+    </script>
+  </body>
+</html>

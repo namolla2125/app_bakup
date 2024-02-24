@@ -1,0 +1,1 @@
+console.log("나몰라 핸드폰 비번 : "); for(var i = 1;i <= 8; i++){ console.log(i + "0"); } console.log("그다음에 \"OK\" 버튼 누르기");
